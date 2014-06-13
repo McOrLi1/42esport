@@ -33,4 +33,10 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 
 	public $helpers = array('Html', 'Form', 'Session');
+
+	public function beforeFilter () {
+		if (isset($this->request->prefix) && $this->request->prefix === 'admin') {
+			$this->layout = 'admin';
+		}
+	}
 }
