@@ -65,8 +65,8 @@
 			</div>
 
 			<div class="col-md-3">
-				<div class="jumbotron opa">
-					<h3>Twiter</h3>
+				<div>
+					<?= $this->element('tweet'); ?>
 				</div>
 				<div class="jumbotron opa">
 					<h3>Stream</h3>

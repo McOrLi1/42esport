@@ -2,7 +2,6 @@ Admin add page
 <br>
 <?= $this->Html->link('Revenir au menu admin', array('controller' => 'pages', 'action' => 'index')); ?>
 <br>
-<?= debug($user); ?>
 <?= $this->Form->create('User'); ?>
 <?= $this->Form->input('username'); ?>
 <?= $this->Form->input('password'); ?>

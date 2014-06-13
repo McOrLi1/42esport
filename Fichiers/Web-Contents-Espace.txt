@@ -1,0 +1,44 @@
+
+*: imposé par le sujet
+
+Accueil General:
+ - News
+ - Access espace tournois
+ - Profil
+ - Tweets
+ - Streams en cours
+ * Access au tickets
+ - Liens vers partenaires
+ - Planning des tournois
+ * Annuaires des inscrits
+ * Forum acces touts forums
+
+Accueil tournoi:
+ - Menu reduit 'acceuil general'
+ - Description externe (où, quand..)
+ - Inscription
+ - Suivi interne (tableau score..)
+ - Suivi progression du joueur
+ - Tweets
+ - News orga
+ - News animation
+ * Annuaire des participants
+ - Stream
+ * Forum
+ - Lien tickets
+ - Activités animation
+
+ Espace profil:
+ - Connection LDAP pour les gens 42
+ - Notation reputation et prix sur tournois
+ - espace modif infos personnelles
+
+Espace admin:
+ - Ajouter un tournoi
+ - Espace gestion des tickets
+ - Manager les BDD
+ - Gerer le matchmaking
+
+
+General:
+ - API Paypal
