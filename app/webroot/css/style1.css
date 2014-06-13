@@ -1,0 +1,47 @@
+.bg {
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 6px;
+	color: inherit;
+	background-color: #eee;
+}
+
+.opa {
+	opacity: 0.5;
+}
+
+img {
+	width: 260px;
+}
+
+.big-fat-bg {
+	background: black;
+	/*background-image: url(http://competitive.na.leagueoflegends.com/sites/default/files/upload/wallpaper/1920x1080_0.jpg);*/
+	/*background-image: url(http://cdn.twitrcovers.com/wp-content/uploads/2013/02/League-of-Legends-l.jpg);*/
+	/*background-image: url(http://linewalls.com/wp-content/uploads/2014/04/games-katarina-league-of-legends-hd-backgrounds-wallpaper-katarina-league-of-legends-katarina-league-of-legends-deviantart-katarina-league-of-legends-build-katarina-league-of-legends-skins-katarina-le.jpg);*/
+	background-repeat:no-repeat;
+}
+
+.padd02 {
+	padding-top: 20px;
+}
+
+.padd05 {
+	padding-top: 50px;
+}
+
+.padd1 {
+	padding-top: 100px;
+}
+
+.padd2 {
+	padding-top: 200px;
+}
+
+.padd3 {
+	padding-top: 300px;
+}
+
+.padd4 {
+	padding-top: 400px;
+}
