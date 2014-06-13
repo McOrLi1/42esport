@@ -5,10 +5,10 @@ class UsersController extends AppController {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->data)) {
-				$this->Session->setFlash("L'user a ete ajoute");
+				$this->Session->setFlash("L'user a ete ajoute", 'notif');
 				$this->redirect(array('controller' => 'pages', 'action' => 'index'));
 			} else {
-				$this->Session->setFlash("L'user n'a pu etre ajoute");
+				$this->Session->setFlash("L'user n'a pu etre ajoute", 'notif');
 			};
 		}
 	}

@@ -12,10 +12,6 @@
 </head>
 <body class="big-fat-bg">
 
-	<div class="container">
-		<?= $this->Session->flash(); ?>
-	</div>
-
 	<div class="navbar bg">
 		<h5>navbar</h5>
 	</div>
@@ -29,6 +25,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="row">
 			<div class="col-md-3 sidebar">
 				<ul class="nav nav-sidebar my-nav">
@@ -39,21 +36,16 @@
 					<li><a class="radius" href="">Nav item</a></li>
 				</ul>
 			</div>
-
 			<div class="col-md-8">
-				<div class="jumbotron">
-					<h3>switch</h3>
+				<div class="bg">
+					<?= $this->fetch('content'); ?>
 				</div>
+				<?= $this->Session->flash(); ?>
 			</div>
-
 		</div>
 
-
 	</div>
 
-	<div class="container">
-		<?= $this->fetch('content'); ?>
-	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<?= $this->Html->script('bootstrap.min.js'); ?>
 </body>
