@@ -13,4 +13,4 @@
 <?= $this->Form->input('type', array('options' => array('Admin', 'SpUser'))); ?>
 <?= $this->Form->input('birthdate', array('label' => 'Date de naissance (jj-mm-yyyy)')); ?>
 <?= $this->Form->input('status', array('options' => array('Normal', 'Banni', 'Suspendu', 'En attente'))); ?>
-<?= $this->Form->end('Ok'); ?>
+<?= $this->Form->end(array('value' => 'Ok', 'class' => 'btn btn-primary')); ?>
