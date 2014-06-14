@@ -8,6 +8,7 @@ class UsersController extends AppController {
 				$this->Session->setFlash("L'user a ete ajoute", 'notif');
 				$this->redirect(array('controller' => 'pages', 'action' => 'index'));
 			} else {
+				$this->set('notifclr', 'Red');
 				$this->Session->setFlash("L'user n'a pu etre ajoute", 'notif');
 			};
 		}
@@ -24,12 +25,14 @@ class UsersController extends AppController {
 
 		if ($this->request->is(array('post', 'put'))) {
 			$this->User->create();
+			echo debug($this->request->data);
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash("L'user a été modifié");
+				$this->Session->setFlash("L'user a été modifié", 'notif');
 				$this->redirect(array('controller' => 'pages', 'action' => 'index'));
 			}
 			else {
-				$this->Session->setFlash("L'user n'a pu etre modifié");
+				$this->set('notifclr', 'Red');
+				$this->Session->setFlash("L'user n'a pu etre modifié", 'notif');
 			}
 		}
 		$this->request->data['User']= current($found);

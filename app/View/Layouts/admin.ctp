@@ -21,7 +21,7 @@
 		<div class="row">
 			<div class="col-md-3 padd02">
 				<div style=" margin-bottom:30px;">
-					<img src="http://www.dianevarjacques.com/wp-content/uploads/2013/09/logo-42.jpg"/>
+					<a href="/"><img src="http://www.dianevarjacques.com/wp-content/uploads/2013/09/logo-42.jpg"/></a>
 				</div>
 			</div>
 		</div>
@@ -37,10 +37,10 @@
 				</ul>
 			</div>
 			<div class="col-md-8">
+				<?= $this->Session->flash(); ?>
 				<div class="bg">
 					<?= $this->fetch('content'); ?>
 				</div>
-				<?= $this->Session->flash(); ?>
 			</div>
 		</div>
 

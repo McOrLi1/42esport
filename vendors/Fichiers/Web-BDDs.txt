@@ -1,0 +1,73 @@
+
+*: clef primaire de la table
+
+(Gestion Utilisateurs:)
+
+	users:
+		* id
+		- login
+		- mdp
+		- name
+		- surname
+		- email
+
+
+(Gestion Tournois:)
+
+	tournaments:
+		* id
+		- name
+
+	registers:
+		* id
+		- id_user
+		- id_tournament
+
+	matchs(en cour):
+		* id
+		- ?
+
+(Gestion Forums:)
+
+	forums:
+		* id
+		- name
+
+	threads:
+		* id
+		- id forum
+		- name
+
+	posts:
+		* id
+		- id_thread
+		- comment (ce post est t'il un comment)
+		- id_post (si comment)
+		- created
+		- modified
+		- id_author
+
+(Unsorted:)
+
+	news:
+		* id
+		- id_orga
+		- id_anim
+		- type
+		- name
+		- text
+		- image
+		- created
+		- modified
+		- id_author
+
+	streams
+		* id
+		- id_tournament
+		- url
+
+
+
+
+
+
