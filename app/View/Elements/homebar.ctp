@@ -9,11 +9,17 @@
 	<li>
 		<a href="/user">
 			<button type="button" style="border-radius: 0px;" class="btn btn-default btn-lg">
-					<span class="glyphicon glyphicon-user">Log in</span>
+					<span class="glyphicon glyphicon-user">Log_in</span>
 			</button>
 		</a>
 	</li>
 	<li>
-		<?= $this->Html->link('Page admin', array('controller' => 'pages', 'action' => 'index', 'admin' => true)); ?>
+		<?= $this->Html->tag('a', null); ?>
+			<button type="button" style="border-radius: 0px;border-bottom-left-radius: 6px;" class="btn btn-default btn-lg">
+					<span class="glyphicon glyphicon-cog">
+						<?= $this->Html->link('Page_Admin', array('controller' => 'pages', 'action' => 'index', 'admin' => true), array('class' => 'def')); ?>
+					</span>
+			</button>
+		</a>
 	</li>
 </ul>
