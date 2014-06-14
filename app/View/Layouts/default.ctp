@@ -15,27 +15,7 @@
 	<div class="container-fluid">
 		<?= $this->Session->flash(); ?>
 	</div>
-	<div class="col-md-6"></div>
-	<div class="col-md-6 nav-bg" style="padding:0px">
-		<ul class="navbar-nav" style="padding: 0px;">
-			<li>
-				<a href="/">
-					<button type="button" style="border-radius: 0px;border-bottom-left-radius: 6px;" class="btn btn-default btn-lg">
-  						<span class="glyphicon glyphicon-home"></span>
-					</button>
-				</a>
-			</li>
-			<li>
-				<a href="/user">
-					<button type="button" style="border-radius: 0px;" class="btn btn-default btn-lg">
-  						<span class="glyphicon glyphicon-user">Log in</span>
-					</button>
-				</a>
-			</li>
-			<li><?= $this->fetch('content'); ?></li>
-		</ul>
-	</div>
-	
+
 	<div class="container">
 
 		<div class="row">
@@ -44,7 +24,14 @@
 					<a href="/"><img src="http://www.dianevarjacques.com/wp-content/uploads/2013/09/logo-42.jpg"/></a>
 				</div>
 			</div>
+
+			<!--navbar-->
+			<div class="col-md-offset-3 col-md-6 nav-bg my-nav-g">
+				<?= $this->element('homebar'); ?>
+			</div>
+			
 		</div>
+
 		<div class="row">
 			<div class="col-md-3">
 				<div class="jumbotron opa">

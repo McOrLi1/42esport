@@ -12,10 +12,6 @@
 </head>
 <body class="admin-bg">
 
-	<div class="navbar bg">
-		<h5>navbar</h5>
-	</div>
-
 	<div class="container">
 
 		<div class="row">
@@ -24,19 +20,18 @@
 					<a href="/"><img src="http://www.dianevarjacques.com/wp-content/uploads/2013/09/logo-42.jpg"/></a>
 				</div>
 			</div>
+
+			<div class="col-md-offset-3 col-md-6 nav-bg my-nav-g">
+				<?= $this->element('homebar'); ?>
+			</div>
+
 		</div>
 
 		<div class="row">
 			<div class="col-md-3 sidebar">
-				<ul class="nav nav-sidebar my-nav">
-					<li><h2 class="radius">Espace Admin</h2></li>
-					<li><a href="">Nav item</a></li>
-					<li><a href="">Nav item</a></li>
-					<li><a href="">Nav item</a></li>
-					<li><a class="radius" href="">Nav item</a></li>
-				</ul>
+				<?= $this->element('admin_sidebar'); ?>
 			</div>
-			<div class="col-md-8">
+			<div class="col-md-9">
 				<?= $this->Session->flash(); ?>
 				<div class="bg">
 					<?= $this->fetch('content'); ?>

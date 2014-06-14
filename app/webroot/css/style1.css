@@ -2,9 +2,25 @@ ul li {
 	list-style-type: none;
 }
 
+li.active {
+	background-color: #428bca;
+}
+
+a.def {
+	color: black;
+}
+
+a.active {
+	color: white;
+}
+
 .inline ul li{
 	float: left;
 	display: block-inline;
+}
+
+div.my-nav-g {
+	padding: 0px;
 }
 
 .my-nav {

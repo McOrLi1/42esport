@@ -1,7 +1,7 @@
 
 <div class="paddb02">
 <h2>Edition de profil</h2>
-	<?= $this->Html->link('<< Retour au menu admin', array('controller' => 'pages', 'action' => 'index', 'admin' => true)); ?>
+	<?= $this->Html->link('<< Retour gestion user', array('action' => 'list', 'admin' => true)); ?>
 	<br>
 	<?= $this->Form->create('User'); ?>
 </div>
