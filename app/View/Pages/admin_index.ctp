@@ -1,10 +1,10 @@
 
 
 <div class="paddb02">
-	<h2>Admin Home</h2>
-	<?= $this->Html->link('Ajouter un user', array('controller' => 'users', 'action' => 'add')) ?>
+	<h2>Gestion des utilisateurs</h2>
+	<?= $this->Html->link('+ Ajouter un utilisateur', array('controller' => 'users', 'action' => 'add')) ?>
 	<br>
-	<?= $this->Html->link('Revenir au home', array('action' => 'index', 'admin' => false)) ?>
+	<?= $this->Html->link('-> Revenir au home', array('action' => 'index', 'admin' => false)) ?>
 </div>
 <div class="table-responsive">
 	<table class="table table-hover table-striped">

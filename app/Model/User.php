@@ -16,7 +16,7 @@ class User extends AppModel {
 				'message' => 'Pas trop de charateres zarbs svp'
 				),
 			'Unique' => array(
-				'rule' => 'usernameUnique',
+				'rule' => 'isUnique',
 				'message' => 'Nom deja pris'
 				)
 			),
@@ -108,13 +108,6 @@ class User extends AppModel {
 			)
 		);
 
-	public function usernameUnique($data, $or = true) {
-		if ($this->findByUsername($data['username'])) {
-			return false;
-		}
-		return true;
-	}
-
 	public function typeAdmitted($data, $or = true) {
 		$str = $data['type'];
 		if ($str === 'Admin' || $str === 'SpUser') {
@@ -125,21 +118,8 @@ class User extends AppModel {
 
 	public function statusAdmitted($data, $or = true) {
 		$str = $data['status'];
-		switch ($str) {
-			case 'Normal':
-				return true;
-				break;
-			case 'Banni':
-				return true;
-				break;
-			case 'Suspendu':
-				return true;
-				break;
-			case 'En attente':
-				return true;
-				break;
-			default:
-				return false;
+		if ($str === 'Normal' || $str === 'Banni' || $str === 'Suspendu' || $str === 'En attente') {
+			return true;
 		}
 		return false;
 	}

@@ -10,7 +10,7 @@
 	<?= $this->fetch('css'); ?>
 	<?= $this->fetch('script');	?>
 </head>
-<body class="big-fat-bg">
+<body class="default-bg">
 
 	<div class="container-fluid">
 		<?= $this->Session->flash(); ?>

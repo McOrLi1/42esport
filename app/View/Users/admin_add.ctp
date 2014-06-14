@@ -1,6 +1,6 @@
 <div class="paddb02">
-	<h2>Admin add page</h2>
-	<?= $this->Html->link('Revenir au menu admin', array('controller' => 'pages', 'action' => 'index')); ?>
+	<h2>Gestion des utilisateurs: ajouter un utilisateur</h2>
+	<?= $this->Html->link('-> Revenir au menu admin', array('controller' => 'pages', 'action' => 'index')); ?>
 	<br>
 	<?= $this->Form->create('User'); ?>
 </div>

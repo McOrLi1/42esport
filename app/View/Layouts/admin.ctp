@@ -10,12 +10,12 @@
 	<?= $this->fetch('css'); ?>
 	<?= $this->fetch('script');	?>
 </head>
-<body class="big-fat-bg">
+<body class="admin-bg">
 
 	<div class="navbar bg">
 		<h5>navbar</h5>
 	</div>
-	
+
 	<div class="container">
 
 		<div class="row">
@@ -29,7 +29,7 @@
 		<div class="row">
 			<div class="col-md-3 sidebar">
 				<ul class="nav nav-sidebar my-nav">
-					<li><h3 class="radius">Admin panel</h3></li>
+					<li><h2 class="radius">Espace Admin</h2></li>
 					<li><a href="">Nav item</a></li>
 					<li><a href="">Nav item</a></li>
 					<li><a href="">Nav item</a></li>

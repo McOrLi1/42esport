@@ -21,11 +21,19 @@ class UsersController extends AppController {
 		if ($found == null) {
 			throw new NotFoundException("La page demandée n'existe pas");
 		}
+
+		if ($this->request->is(array('post', 'put'))) {
+			$this->User->create();
+			if ($this->User->save($this->request->data)) {
+				$this->Session->setFlash("L'user a été modifié");
+				$this->redirect(array('controller' => 'pages', 'action' => 'index'));
+			}
+			else {
+				$this->Session->setFlash("L'user n'a pu etre modifié");
+			}
+		}
 		$this->request->data['User']= current($found);
 		$this->set('user', current($found));
-		if ($this->request->is('post')) {
-			echo 'ok';
-		}
 	}
 
 }
