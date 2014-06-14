@@ -37,10 +37,10 @@
 				</ul>
 			</div>
 			<div class="col-md-8">
+				<?= $this->Session->flash(); ?>
 				<div class="bg">
 					<?= $this->fetch('content'); ?>
 				</div>
-				<?= $this->Session->flash(); ?>
 			</div>
 		</div>
 

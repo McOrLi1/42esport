@@ -4,7 +4,7 @@
 	<h2>Gestion des utilisateurs</h2>
 	<?= $this->Html->link('<< Revenir au home', array('action' => 'index', 'admin' => false)) ?>
 	<br>
-	<?= $this->Html->link('+ Ajouter un utilisateur', array('controller' => 'users', 'action' => 'add')) ?>
+	<?= $this->Html->link('++ Ajouter un utilisateur', array('controller' => 'users', 'action' => 'add')) ?>
 </div>
 <div class="table-responsive">
 	<table class="table table-hover table-striped">
