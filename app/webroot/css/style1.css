@@ -22,6 +22,13 @@ ul li {
 	color: inherit;
 	background-color: #eee;
 }
+.twitch {
+	padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 6px;
+    padding-bottom: 2px;
+    background-color: #424242;
+}
 
 .opa {
 	opacity: 0.5;

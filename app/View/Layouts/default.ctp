@@ -71,8 +71,8 @@
 				<div class="paddb02">
 					<?= $this->element('tweet'); ?>
 				</div>
-				<div class="jumbotron opa">
-					<h3>Stream</h3>
+				<div class="jumbotron twitch" style="padding-left: 6px; padding-right: 6px;">
+					<?= $this->element('twitch'); ?>
 				</div>
 			</div>
 			<?= $this->Session->flash(); ?>
