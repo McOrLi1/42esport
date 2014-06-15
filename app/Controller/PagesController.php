@@ -40,7 +40,6 @@ class PagesController extends AppController {
 	}
 
 	public function admin_index() {
-		$this->set('users', $this->User->find('all'));
 	}
 
 }

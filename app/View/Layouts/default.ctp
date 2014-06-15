@@ -16,13 +16,6 @@
 		<?= $this->Session->flash(); ?>
 	</div>
 
-	<div class="navbar bg">
-		<ul class="inline">
-			<li><h5>navbar</h5></li>
-			<li><?= $this->fetch('content'); ?></li>
-		</ul>
-	</div>
-	
 	<div class="container">
 
 		<div class="row">
@@ -31,7 +24,14 @@
 					<a href="/"><img src="http://www.dianevarjacques.com/wp-content/uploads/2013/09/logo-42.jpg"/></a>
 				</div>
 			</div>
+
+			<!--navbar-->
+			<div class="col-md-offset-3 col-md-6 nav-bg my-nav-g">
+				<?= $this->element('homebar'); ?>
+			</div>
+			
 		</div>
+
 		<div class="row">
 			<div class="col-md-3">
 				<div class="jumbotron opa">

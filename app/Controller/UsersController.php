@@ -6,12 +6,13 @@ class UsersController extends AppController {
 			$this->User->create();
 			if ($this->User->save($this->data)) {
 				$this->Session->setFlash("L'user a ete ajoute", 'notif');
-				$this->redirect(array('controller' => 'pages', 'action' => 'index'));
+				$this->redirect(array('controller' => 'users', 'action' => 'list'));
 			} else {
-				$this->set('notifclr', 'Red');
+				$this->set('notif_clr', 'Red');
 				$this->Session->setFlash("L'user n'a pu etre ajoute", 'notif');
 			};
 		}
+		$this->set('sidebar', 'users');
 	}
 
 	public function admin_edit($id = null) {
@@ -25,18 +26,23 @@ class UsersController extends AppController {
 
 		if ($this->request->is(array('post', 'put'))) {
 			$this->User->create();
-			echo debug($this->request->data);
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash("L'user a été modifié", 'notif');
-				$this->redirect(array('controller' => 'pages', 'action' => 'index'));
+				$this->redirect(array('controller' => 'users', 'action' => 'list'));
 			}
 			else {
-				$this->set('notifclr', 'Red');
+				$this->set('notif_clr', 'Red');
 				$this->Session->setFlash("L'user n'a pu etre modifié", 'notif');
 			}
 		}
 		$this->request->data['User']= current($found);
 		$this->set('user', current($found));
+		$this->set('sidebar', 'users');
+	}
+
+	public function admin_list() {
+		$this->set('users', $this->User->find('all'));
+		$this->set('sidebar', 'users');
 	}
 
 }

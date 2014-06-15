@@ -12,7 +12,7 @@ class User extends AppModel {
 				'message' => 'Longueur entre 3 et 20'
 				),
 			'Shape' => array(
-				'rule' => '/^[a-z0-9\-_]+$/i',
+				'rule' => '/^[a-z0-9\-_ ]+$/i',
 				'message' => 'Pas trop de charateres zarbs svp'
 				),
 			'Unique' => array(
@@ -44,7 +44,7 @@ class User extends AppModel {
 				'message' => 'Longueur entre 3 et 25'
 				),
 			'Shape' => array(
-				'rule' => '/^[a-z\-\']+$/i',
+				'rule' => '/^[a-z\-\' ]+$/i',
 				'message' => 'Pas trop de charateres zarbs svp'
 				)
 			),

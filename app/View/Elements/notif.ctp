@@ -1,6 +1,6 @@
 <?php
-	echo '<div class="jumbotron alert ';
-	if (isset($notif_clr) && $notif_clr === 'Red') {
+	echo '<div class="alert ';
+	if (isset($notif_clr) && $notif_clr == 'Red') {
 		echo 'alert-danger';
 	}
 	else {
