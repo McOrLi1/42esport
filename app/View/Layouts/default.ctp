@@ -65,6 +65,9 @@
 						</div>
 					</div>
 				</div>
+				<div class="bg">
+					<?= $this->fetch('content'); ?>
+				</div>
 			</div>
 
 			<div class="col-md-3">

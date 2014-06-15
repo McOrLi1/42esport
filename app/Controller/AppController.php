@@ -32,7 +32,7 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-	public $helpers = array('Html', 'Form', 'Session');
+	public $helpers = array('Html', 'Form', 'Session', 'Fofo');
 
 	public function beforeFilter () {
 		if (isset($this->request->prefix) && $this->request->prefix === 'admin') {

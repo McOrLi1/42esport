@@ -2,5 +2,3 @@
 
 class Category extends AppModel {
 }
-
-?>
