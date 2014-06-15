@@ -40,6 +40,7 @@
 				</td>
 				<td>
 					<?= $this->Html->link('Editer', array('controller' => 'users', 'action' => 'edit', $d['id'])) ?>
+					<?= $this->Html->link('Supprimer', array('controller' => 'users', 'action' => 'delete', $d['id'])) ?>
 				</td>
 			</tr>
 		<?php endforeach; ?>
