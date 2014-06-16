@@ -21,7 +21,7 @@
 		<div class="row">
 			<div class="col-md-3 padd02">
 				<div style=" margin-bottom:30px;">
-					<a href="/"><img src="http://www.dianevarjacques.com/wp-content/uploads/2013/09/logo-42.jpg"/></a>
+					<a href="/"><img src="/app/webroot/img/esport.png"></a>
 				</div>
 			</div>
 
@@ -35,7 +35,7 @@
 		<div class="row">
 			<div class="col-md-3">
 				<div class="jumbotron opa">
-					<h3>Tournaments</h3>
+				
 				</div>
 				<div class="jumbotron opa">
 					<h3>Planing</h3>
