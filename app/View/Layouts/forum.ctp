@@ -17,7 +17,7 @@
 		<div class="row">
 			<div class="col-md-3 padd02">
 				<div style=" margin-bottom:30px;">
-					<a href="/"><img src="http://www.dianevarjacques.com/wp-content/uploads/2013/09/logo-42.jpg"/></a>
+					<a class="logo" href="/"><img src="/app/webroot/img/esport.png"></a>
 				</div>
 			</div>
 

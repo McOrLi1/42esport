@@ -17,7 +17,7 @@
 		<div class="row">
 			<div class="col-md-3 padd02">
 				<div style=" margin-bottom:30px;">
-					<a href="/"><img src="/app/webroot/img/esport.png"></a>
+					<a class="logo" href="/"><img src="/app/webroot/img/esport.png"></a>
 				</div>
 			</div>
 

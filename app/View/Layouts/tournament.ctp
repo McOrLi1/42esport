@@ -34,8 +34,7 @@
 
 		<div class="row">
 			<div class="col-md-3">
-				<div class="jumbotron opa">
-					<?= $this->element('tournamentbar'); ?>
+				<?= $this->element('admin_sidebar'); ?>				
 				</div>
 				<div class="jumbotron opa">
 					<h3>Planing</h3>
