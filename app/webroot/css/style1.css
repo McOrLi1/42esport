@@ -19,10 +19,6 @@ a.active {
 	display: block-inline;
 }
 
-.logo img {
-	padding: 30px;
-}
-
 div.my-nav-g {
 	padding: 0px;
 }
@@ -74,22 +70,21 @@ img {
 	width: 260px;
 }
 
-body.admin-bg {
+body.layout-bg {
 	background: center center fixed;
-	background-image: url(http://images5.alphacoders.com/418/418028.jpg);
-	/*background-image: url(http://competitive.na.leagueoflegends.com/sites/default/files/upload/wallpaper/1920x1080_0.jpg);*/
-	/*background-image: url(http://cdn.twitrcovers.com/wp-content/uploads/2013/02/League-of-Legends-l.jpg);*/
-	/*background-image: url(http://linewalls.com/wp-content/uploads/2014/04/games-katarina-league-of-legends-hd-backgrounds-wallpaper-katarina-league-of-legends-katarina-league-of-legends-deviantart-katarina-league-of-legends-build-katarina-league-of-legends-skins-katarina-le.jpg);*/
 	background-size: cover;
 }
 
+body.admin-bg {
+	background-image: url(http://images5.alphacoders.com/418/418028.jpg);
+}
+
 body.default-bg {
-	background: center center fixed;
-	background-image: url(http://sportcultures.files.wordpress.com/2014/01/league-of-legends-finals-most-watched-esports-event-of-all-time_-gel_1.jpg);
-	/*background-image: url(http://competitive.na.leagueoflegends.com/sites/default/files/upload/wallpaper/1920x1080_0.jpg);*/
-	/*background-image: url(http://cdn.twitrcovers.com/wp-content/uploads/2013/02/League-of-Legends-l.jpg);*/
-	/*background-image: url(http://linewalls.com/wp-content/uploads/2014/04/games-katarina-league-of-legends-hd-backgrounds-wallpaper-katarina-league-of-legends-katarina-league-of-legends-deviantart-katarina-league-of-legends-build-katarina-league-of-legends-skins-katarina-le.jpg);*/
-	background-size: cover;
+	background-image: url(http://images5.alphacoders.com/382/382899.jpg);
+}
+
+body.forum-bg {
+	background-image: url(http://fc00.deviantart.net/fs70/f/2014/007/2/7/league_of_legends__clashing_winds_by_ae_rie-d70x719.png);
 }
 
 .paddb02 {
@@ -121,5 +116,5 @@ body.default-bg {
 }
 
 .my-txt-error {
-	font-color:red;
+	font-color: red;
 }

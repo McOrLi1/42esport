@@ -88,8 +88,8 @@ class User extends AppModel {
 				'message' => 'Ce champ ne peut etre vide'
 				),
 			'Date' => array(
-				'rule' => array('date', 'dmy'),
-				'message' => 'Mois-Jour-Annee'
+				'rule' => array('date', 'ymd'),
+				'message' => 'Annee-Mois-Jour'
 				),
 			'Date' => array(
 				'rule' => 'birthdateAge',

@@ -12,7 +12,6 @@ class UsersController extends AppController {
 				$this->Session->setFlash("L'user n'a pu etre ajoute", 'notif');
 			};
 		}
-		$this->set('sidebar', 'users');
 	}
 
 	public function admin_edit($id = null) {
@@ -37,11 +36,13 @@ class UsersController extends AppController {
 		}
 		$this->request->data['User']= current($found);
 		$this->set('user', current($found));
-		$this->set('sidebar', 'users');
 	}
 
 	public function admin_list() {
 		$this->set('users', $this->User->find('all'));
+	}
+
+	public function beforeRender() {
 		$this->set('sidebar', 'users');
 	}
 

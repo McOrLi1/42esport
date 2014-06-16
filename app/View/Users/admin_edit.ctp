@@ -1,7 +1,7 @@
 
 <div class="paddb02">
 <h2>Edition de profil</h2>
-	<?= $this->Html->link('<< Retour gestion user', array('action' => 'list', 'admin' => true)); ?>
+	<?= $this->Html->link('<< Retour gestion user', array('action' => 'list')); ?>
 	<br>
 	<?= $this->Form->create('User'); ?>
 </div>
@@ -11,9 +11,8 @@
 <?= $this->Form->input('name', array('label' => 'Prénom')); ?>
 <?= $this->Form->input('lastname', array('label' => 'Nom')); ?>
 <?= $this->Form->input('email'); ?>
-<?= $this->Form->input('type', array('type' => 'select', 'options' => array('Admin' => 'Admin', 'User' => 'User'))); ?>
-<?= $this->Form->input('birthdate', array('label' => 'Date de naissance (jj-mm-yyyy)')); ?>
+<?= $this->Form->input('type', array('type' => 'select', 'options' => array('User' => 'User', 'Admin' => 'Admin'))); ?>
+<?= $this->Form->input('birthdate', array('label' => 'Date de naissance (yyyy-mm-dd)', 'type' => 'text')); ?>
 <?= $this->Form->input('status', array('type' => 'select', 'options' => array('Normal' => 'Normal' , 'Banni' => 'Banni', 'Suspendu' => 'Suspendu' , 'En attente' => 'En attente'))); ?>
 <?= $this->Form->input('id', array('type' => 'hidden')); ?>
 <?= $this->Form->end(array('label' => 'Valider la modif', 'class' => 'btn btn-primary')); ?>
-

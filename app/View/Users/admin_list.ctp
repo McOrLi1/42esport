@@ -9,9 +9,9 @@
 			<th>Login</th>
 			<th>Prenom</th>
 			<th>Nom</th>
+			<th>Date de naissance</th>
 			<th>Email</th>
 			<th>Type</th>
-			<th>Date de naissance</th>
 			<th>Statut</th>
 			<th>Action</th>
 		</tr>
@@ -21,9 +21,19 @@
 				<td><?= $d['username']; ?></td>
 				<td><?= $d['name']; ?></td>
 				<td><?= $d['lastname']; ?></td>
-				<td><?= $d['email']; ?></td>
-				<td><?= $d['type']; ?></td>
 				<td><?= $d['birthdate']; ?></td>
+				<td><?= $d['email']; ?></td>
+				<td>
+				<?php
+					echo '<span class="label ';
+					switch ($d['type']) {
+						case "Admin": echo 'label-success'; break;
+						case "User": echo 'label-default'; break;
+					}
+					echo '">'
+				?>
+				<?= $d['type']; ?>
+				</td>
 				<td>
 				<?php
 					echo '<span class="label ';

@@ -1,2 +1,2 @@
-<h3>toto</h3>
-<h3>tata</h3>
+<h3>Toto</h3>
+<h3>Tata</h3>

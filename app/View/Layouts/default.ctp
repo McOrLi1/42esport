@@ -10,7 +10,7 @@
 	<?= $this->fetch('css'); ?>
 	<?= $this->fetch('script');	?>
 </head>
-<body class="default-bg">
+<body class="layout-bg default-bg">
 
 	<div class="container-fluid">
 		<?= $this->Session->flash(); ?>
@@ -20,7 +20,7 @@
 
 		<div class="row">
 			<div class="col-md-3 padd02">
-				<div style=" margin-bottom:30px;">
+				<div style="margin: 30px 0px 30px 0px;">
 					<a class="logo" href="/"><img src="/app/webroot/img/esport.png"></a>
 				</div>
 			</div>

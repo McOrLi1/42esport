@@ -10,13 +10,14 @@
 	<?= $this->fetch('css'); ?>
 	<?= $this->fetch('script');	?>
 </head>
-<body class="admin-bg">
+<body class="layout-bg admin-bg">
 
 	<div class="container">
 
 		<div class="row">
+
 			<div class="col-md-3 padd02">
-				<div style=" margin-bottom:30px;">
+				<div style="margin: 30px 0px 30px 0px;">
 					<a class="logo" href="/"><img src="/app/webroot/img/esport.png"></a>
 				</div>
 			</div>
@@ -29,7 +30,7 @@
 
 		<div class="row">
 			<div class="col-md-3 sidebar">
-				<?= $this->element('admin_sidebar'); ?>
+				<?= $this->element('sidebar_admin'); ?>
 			</div>
 			<div class="col-md-9">
 				<?= $this->Session->flash(); ?>
