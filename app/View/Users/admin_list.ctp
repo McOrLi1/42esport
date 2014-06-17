@@ -50,7 +50,7 @@
 				</td>
 				<td>
 					<?= $this->Html->link('Editer', array('controller' => 'users', 'action' => 'edit', $d['id'])) ?>
-					<?= $this->Html->link('Supprimer', array('controller' => 'users', 'action' => 'delete', $d['id'])) ?>
+					<?= $this->Html->link('Supprimer', array('controller' => 'users', 'action' => 'delete', $d['id']), null, 'Etes vous sûr de vouloir supprimer cet utilisateur ?') ?>
 				</td>
 			</tr>
 		<?php endforeach; ?>

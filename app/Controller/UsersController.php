@@ -42,6 +42,25 @@ class UsersController extends AppController {
 		$this->set('users', $this->User->find('all'));
 	}
 
+	public function admin_delete($id = null) {
+		if ($id == null) {
+			throw new NotFoundException("La page demandée n'existe pas");
+		}
+		$found = $this->User->findById($id);
+		if ($found == null) {
+			throw new NotFoundException("La page demandée n'existe pas");
+		}
+		if ($this->User->delete($id)) {
+			$this->Session->setFlash("L'user a été supprimé", 'notif');
+			$this->redirect(array('controller' => 'users', 'action' => 'list'));
+		} else {
+			$this->set('notif_clr', 'Red');
+			$this->Session->setFlash("L'user n'a pu etre supprimé", 'notif');
+			$this->redirect(array('controller' => 'users', 'action' => 'list'));
+		}
+
+	}
+
 	public function beforeRender() {
 		$this->set('sidebar', 'users');
 	}
