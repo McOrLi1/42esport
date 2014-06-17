@@ -2,10 +2,10 @@
 -- version 4.1.9
 -- http://www.phpmyadmin.net
 --
--- Host: localhost:3306
--- Generation Time: Jun 17, 2014 at 02:15 AM
--- Server version: 5.5.36
--- PHP Version: 5.4.26
+-- Client :  localhost:3306
+-- Généré le :  Mar 17 Juin 2014 à 09:24
+-- Version du serveur :  5.5.36
+-- Version de PHP :  5.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `esport`
+-- Base de données :  `esport`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Structure de la table `categories`
 --
 
 CREATE TABLE IF NOT EXISTS `categories` (
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data for table `categories`
+-- Contenu de la table `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `id_forum`, `created`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `categories` (`id`, `name`, `id_forum`, `created`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `forums`
+-- Structure de la table `forums`
 --
 
 CREATE TABLE IF NOT EXISTS `forums` (
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `forums` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data for table `forums`
+-- Contenu de la table `forums`
 --
 
 INSERT INTO `forums` (`id`, `name`, `created`) VALUES
@@ -68,7 +68,35 @@ INSERT INTO `forums` (`id`, `name`, `created`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
+-- Structure de la table `inscriptions`
+--
+
+CREATE TABLE IF NOT EXISTS `inscriptions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `id_team` int(11) NOT NULL,
+  `status` varchar(256) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `news`
+--
+
+CREATE TABLE IF NOT EXISTS `news` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(256) NOT NULL,
+  `text` text NOT NULL,
+  `id_tournament` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `posts`
 --
 
 CREATE TABLE IF NOT EXISTS `posts` (
@@ -83,7 +111,20 @@ CREATE TABLE IF NOT EXISTS `posts` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `threads`
+-- Structure de la table `teams`
+--
+
+CREATE TABLE IF NOT EXISTS `teams` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name_team` varchar(256) NOT NULL,
+  `id_tournois` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `threads`
 --
 
 CREATE TABLE IF NOT EXISTS `threads` (
@@ -95,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `threads` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data for table `threads`
+-- Contenu de la table `threads`
 --
 
 INSERT INTO `threads` (`id`, `name`, `id_category`, `created`) VALUES
@@ -105,7 +146,39 @@ INSERT INTO `threads` (`id`, `name`, `id_category`, `created`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `tournaments`
+--
+
+CREATE TABLE IF NOT EXISTS `tournaments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name_tournament` varchar(256) NOT NULL,
+  `start_tournament` datetime NOT NULL,
+  `end_tournament` datetime NOT NULL,
+  `start_register` datetime NOT NULL,
+  `end_register` datetime NOT NULL,
+  `inscrits_max` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `gamer_max` int(11) NOT NULL,
+  `remplace_max` int(11) NOT NULL,
+  `id_forum` int(11) NOT NULL,
+  `tweet_off` varchar(500) NOT NULL,
+  `tweet_flood` varchar(500) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `name_game` varchar(256) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `tournaments`
+--
+
+INSERT INTO `tournaments` (`id`, `name_tournament`, `start_tournament`, `end_tournament`, `start_register`, `end_register`, `inscrits_max`, `price`, `gamer_max`, `remplace_max`, `id_forum`, `tweet_off`, `tweet_flood`, `description`, `name_game`) VALUES
+(1, 'Lolilol', '1963-12-16 00:00:00', '1963-12-17 00:00:00', '1963-12-16 00:00:00', '1963-12-17 00:00:00', 200, 42, 5, 3, 1, 'COUCOU', 'COUCOU', 'C''est vraiment un jeu super nul LOL.', 'LOL');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -124,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
--- Dumping data for table `users`
+-- Contenu de la table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `name`, `lastname`, `email`, `type`, `birthdate`, `status`, `created_profile`) VALUES
@@ -136,6 +209,19 @@ INSERT INTO `users` (`id`, `username`, `password`, `name`, `lastname`, `email`, 
 (6, 'Minitoto', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Normal', NULL),
 (7, 'Minitata', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Normal', NULL),
 (8, 'Minititi', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Suspendu', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `videos`
+--
+
+CREATE TABLE IF NOT EXISTS `videos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_tournament` int(11) NOT NULL,
+  `url_video` varchar(535) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
