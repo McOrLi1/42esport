@@ -17,25 +17,25 @@
 	</div>
 
 	<div class="container">
-
+<!--header-->
 		<div class="row">
 			<div class="col-md-3 padd02">
 				<div style="margin: 30px 0px 30px 0px;">
 					<a class="logo" href="/"><img src="/app/webroot/img/esport.png"></a>
 				</div>
 			</div>
-
-			<!--navbar-->
-			<div class="col-md-offset-3 col-md-6 nav-bg my-nav-g">
+	<!--navbar-->
+			<div class="col-md-offset-6 nav-bg my-nav-g">
 				<?= $this->element('homebar'); ?>
 			</div>
-			
+	<!--/navbar-->
 		</div>
-
+<!--/header-->
+<!--content-->
 		<div class="row">
 			<div class="col-md-3">
 				<div class="jumbotron opa">
-					<?= $this->element('tournamentbar'); ?>
+					<?= $this->element('sidebar_tournament'); ?>
 				</div>
 				<div class="jumbotron opa">
 					<h3>Planing</h3>
@@ -80,7 +80,7 @@
 			</div>
 			<?= $this->Session->flash(); ?>
 		</div>
-
+<!--/content-->
 
 	</div>
 

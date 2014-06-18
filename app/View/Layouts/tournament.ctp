@@ -10,7 +10,8 @@
 	<?= $this->fetch('css'); ?>
 	<?= $this->fetch('script');	?>
 </head>
-<body class="layout-bg default-bg">
+
+<?= $this->HTournament->body($tournament['Tournament']['bg_url']); ?>
 
 	<div class="container-fluid">
 		<?= $this->Session->flash(); ?>

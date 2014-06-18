@@ -9,6 +9,13 @@ class TournamentsController extends AppController {
 		$this->set('tournaments', $this->Tournament->find('all'));
 	}
 
+	public function to_list() {
+		return ($this->Tournament->find('all'));
+	}
+
+	public function index($id = null) {
+		$this->set('tournament', $this->Tournament->findById($id));
+	} 
 
 	public function admin_add() {
 		if ($this->request->is('post')) {
@@ -48,6 +55,7 @@ class TournamentsController extends AppController {
 	}
 
 	public function beforeRender() {
+		parent::beforeRender();
 		$this->set('sidebar', 'tournaments');
 		if ($this->request->prefix == null) {
 			$this->layout = 'tournament';
