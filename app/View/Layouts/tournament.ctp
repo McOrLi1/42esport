@@ -10,7 +10,7 @@
 	<?= $this->fetch('css'); ?>
 	<?= $this->fetch('script');	?>
 </head>
-<body class="default-bg">
+<body class="layout-bg default-bg">
 
 	<div class="container-fluid">
 		<?= $this->Session->flash(); ?>
@@ -20,7 +20,7 @@
 
 		<div class="row">
 			<div class="col-md-3 padd02">
-				<div style=" margin-bottom:30px;">
+				<div style="margin: 30px 0px 30px 0px;">
 					<a class="logo" href="/"><img src="/app/webroot/img/esport.png"></a>
 				</div>
 			</div>
@@ -34,19 +34,23 @@
 
 		<div class="row">
 			<div class="col-md-3">
-				<?= $this->element('admin_sidebar'); ?>				
+				<div class="jumbotron">
+					<h3>Débute dans 2j et 05h50</h3>
 				</div>
-				<div class="jumbotron opa">
+				<div class="jumbotron">
+					<h3 style="color:red;">Inscription</h3>
+				</div>
+				<div class="jumbotron">
 					<h3>Planing</h3>
 				</div>
-				<div class="jumbotron opa">
+				<div class="jumbotron">
 					<h3>Forum</h3>
 				</div>
 			</div>
 
 			<div class="col-md-6">
 				<div class="jumbotron">
-					<h3>News</h3>
+					<h3 style="color:green;">Infos General</h3>
 				</div>
 				<div class="jumbotron">
 					<h3>News</h3>
@@ -54,12 +58,12 @@
 
 				<div class="row">
 					<div class="col-md-6">
-						<div class="jumbotron opa">
+						<div class="jumbotron">
 							<h3>News</h3>
 						</div>
 					</div>
 					<div class="col-md-6">
-						<div class="jumbotron opa">
+						<div class="jumbotron">
 							<h3>News</h3>
 						</div>
 					</div>
@@ -70,6 +74,9 @@
 			</div>
 
 			<div class="col-md-3">
+				<div class="paddb02">
+					<?= $this->element('tweet'); ?>
+				</div>
 				<div class="paddb02">
 					<?= $this->element('tweet'); ?>
 				</div>
