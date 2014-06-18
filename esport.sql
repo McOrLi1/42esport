@@ -1,228 +1,53 @@
--- phpMyAdmin SQL Dump
--- version 4.1.9
--- http://www.phpmyadmin.net
---
--- Client :  localhost:3306
--- Généré le :  Mer 18 Juin 2014 à 08:26
--- Version du serveur :  5.5.36
--- Version de PHP :  5.4.26
+<!DOCTYPE HTML><html lang='en' dir='ltr' class='chrome chrome34'><meta charset="utf-8" /><meta name="robots" content="noindex,nofollow" /><meta http-equiv="X-UA-Compatible" content="IE=Edge"><style>html{display: none;}</style><link rel="icon" href="favicon.ico" type="image/x-icon" /><link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /><link rel="stylesheet" type="text/css" href="phpmyadmin.css.php?server=1&amp;token=072cd518cc3a900109a4b205988c1bdb&amp;nocache=5590045518ltr" /><link rel="stylesheet" type="text/css" href="./themes/pmahomme/jquery/jquery-ui-1.9.2.custom.css" /><title>127.0.0.1:8080 / localhost | phpMyAdmin 4.1.9</title><script type="text/javascript" src="js/get_scripts.js.php?token=072cd518cc3a900109a4b205988c1bdb&scripts[]=jquery/jquery-1.8.3.min.js&scripts[]=ajax.js&scripts[]=keyhandler.js&scripts[]=jquery/jquery-ui-1.9.2.custom.min.js&scripts[]=jquery/jquery.sprintf.js&scripts[]=jquery/jquery.cookie.js&scripts[]=jquery/jquery.mousewheel.js&scripts[]=jquery/jquery.event.drag-2.2.js&scripts[]=jquery/jquery-ui-timepicker-addon.js&scripts[]=jquery/jquery.ba-hashchange-1.3.js&scripts[]=jquery/jquery.debounce-1.0.5.js&scripts[]=jquery/jquery.menuResizer-1.0.js&scripts[]=cross_framing_protection.js&scripts[]=rte.js&scripts[]=tracekit/tracekit.js&scripts[]=error_report.js&scripts[]=doclinks.js&scripts[]=functions.js&scripts[]=navigation.js&scripts[]=indexes.js&scripts[]=common.js&scripts[]=codemirror/lib/codemirror.js&scripts[]=codemirror/mode/sql/sql.js&scripts[]=codemirror/addon/runmode/runmode.js"></script><script type='text/javascript' src='js/messages.php?lang=en&amp;db=&amp;token=072cd518cc3a900109a4b205988c1bdb'></script><script type='text/javascript' src='js/get_image.js.php?theme=pmahomme'></script><script type="text/javascript">// <![CDATA[
+PMA_commonParams.setAll({common_query:"token=072cd518cc3a900109a4b205988c1bdb",opendb_url:"db_structure.php",safari_browser:"0",querywindow_height:"400",querywindow_width:"600",collation_connection:"utf8mb4_general_ci",lang:"en",server:"1",table:"",db:"",token:"072cd518cc3a900109a4b205988c1bdb",text_dir:"ltr",pma_absolute_uri:"http://127.0.0.1:8080/phpmyadmin/",pma_text_default_tab:"Browse",pma_text_left_default_tab:"Structure",confirm:"1"});
+AJAX.scriptHandler.add("jquery/jquery-1.8.3.min.js",0).add("ajax.js",0).add("keyhandler.js",1).add("jquery/jquery-ui-1.9.2.custom.min.js",0).add("jquery/jquery.sprintf.js",0).add("jquery/jquery.cookie.js",0).add("jquery/jquery.mousewheel.js",0).add("jquery/jquery.event.drag-2.2.js",0).add("jquery/jquery-ui-timepicker-addon.js",0).add("jquery/jquery.ba-hashchange-1.3.js",0).add("jquery/jquery.debounce-1.0.5.js",0).add("jquery/jquery.menuResizer-1.0.js",0).add("cross_framing_protection.js",0).add("rte.js",1).add("tracekit/tracekit.js",1).add("error_report.js",1).add("messages.php?lang=en&amp;db=&amp;token=072cd518cc3a900109a4b205988c1bdb",0).add("get_image.js.php?theme=pmahomme",0).add("doclinks.js",1).add("functions.js",1).add("navigation.js",0).add("indexes.js",1).add("common.js",1).add("codemirror/lib/codemirror.js",0).add("codemirror/mode/sql/sql.js",0).add("codemirror/addon/runmode/runmode.js",0);
+$(function() {AJAX.fireOnload("keyhandler.js");AJAX.fireOnload("rte.js");AJAX.fireOnload("tracekit/tracekit.js");AJAX.fireOnload("error_report.js");AJAX.fireOnload("doclinks.js");AJAX.fireOnload("functions.js");AJAX.fireOnload("indexes.js");AJAX.fireOnload("common.js");});
+// ]]></script></head><body><div id="pma_navigation"><div id="pma_navigation_resizer"></div><div id="pma_navigation_collapser"></div><div id="pma_navigation_content"><div id="pma_navigation_header"><a class="hide navigation_url" href="navigation.php?ajax_request=1&amp;token=072cd518cc3a900109a4b205988c1bdb"></a><!-- LOGO START --><div id="pmalogo">    <a href="index.php?token=072cd518cc3a900109a4b205988c1bdb"><img src="./themes/pmahomme/img/logo_left.png" alt="phpMyAdmin" id="imgpmalogo" /></a></div><!-- LOGO END --><!-- LINKS START --><div id="leftframelinks"><a href="index.php?token=072cd518cc3a900109a4b205988c1bdb" title="Home"><img src="themes/dot.gif" title="Home" alt="Home" class="icon ic_b_home" /></a><a href="index.php?token=072cd518cc3a900109a4b205988c1bdb&amp;old_usr=root" class="disableAjax" title="Log out"><img src="themes/dot.gif" title="Log out" alt="Log out" class="icon ic_s_loggoff" /></a><a href="querywindow.php?token=072cd518cc3a900109a4b205988c1bdb&amp;no_js=true" id="pma_open_querywindow" class="disableAjax" title="Query window"><img src="themes/dot.gif" title="Query window" alt="Query window" class="icon ic_b_selboard" /></a><a href="./doc/html/index.html" target="documentation" title="phpMyAdmin documentation"><img src="themes/dot.gif" title="phpMyAdmin documentation" alt="phpMyAdmin documentation" class="icon ic_b_docs" /></a><a href="./url.php?url=http%3A%2F%2Fdev.mysql.com%2Fdoc%2Frefman%2F5.5%2Fen%2Findex.html&amp;token=072cd518cc3a900109a4b205988c1bdb" target="mysql_doc"><img src="themes/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_sqlhelp" /></a><a href="#" id="pma_navigation_reload" title="Reload navigation panel"><img src="themes/dot.gif" title="Reload navigation panel" alt="Reload navigation panel" class="icon ic_s_reload" /></a></div><!-- LINKS ENDS --><!-- RECENT START --><div id="recentTableList"><form method="post" action="sql.php"><input type="hidden" name="db" value="" /><input type="hidden" name="table" value="" /><input type="hidden" name="server" value="1" /><input type="hidden" name="token" value="072cd518cc3a900109a4b205988c1bdb" /><select name="selected_recent_table" id="recentTable"><option value="">(Recent tables) ...</option><option value="{&quot;db&quot;:&quot;esport&quot;,&quot;table&quot;:&quot;tournaments&quot;}">`esport`.`tournaments`</option><option value="{&quot;db&quot;:&quot;esport&quot;,&quot;table&quot;:&quot;news&quot;}">`esport`.`news`</option><option value="{&quot;db&quot;:&quot;esport&quot;,&quot;table&quot;:&quot;users&quot;}">`esport`.`users`</option><option value="{&quot;db&quot;:&quot;esport&quot;,&quot;table&quot;:&quot;threads&quot;}">`esport`.`threads`</option></select></form></div><!-- RECENT END --><img src="./themes/pmahomme/img/ajax_clock_small.gif" title="Loading…" alt="Loading…" style="visibility: hidden; display:none" class="throbber" /></div><div id="pma_navigation_tree" class="list_container highlight"><div id='pma_navigation_tree_content'><ul><li class='first new_database italics'><div class='block'><i class='first'></i></div><div class='block'><a href='server_databases.php?server=1&amp;token=072cd518cc3a900109a4b205988c1bdb'><img src="themes/dot.gif" title="" alt="" class="icon ic_b_newdb" /></a></div><a href='server_databases.php?server=1&amp;token=072cd518cc3a900109a4b205988c1bdb'>New</a></li><li class='database'><div class='block'><i></i><b></b><a class='expander' href='#'><span class='hide aPath'>cm9vdA==.ZGJfZm9ydHl0d28=</span><span class='hide vPath'>cm9vdA==.ZGJfZm9ydHl0d28=</span><span class='hide pos'>0</span><img src="themes/dot.gif" title="Expand/Collapse" alt="Expand/Collapse" class="icon ic_b_plus" /></a></div><div class='block'><a href='db_operations.php?server=1&amp;db=db_fortytwo&amp;token=072cd518cc3a900109a4b205988c1bdb'><img src="themes/dot.gif" title="Database operations" alt="Database operations" class="icon ic_s_db" /></a></div><a href='db_structure.php?server=1&amp;db=db_fortytwo&amp;token=072cd518cc3a900109a4b205988c1bdb'>db_fortytwo</a></li><li class='database'><div class='block'><i></i><b></b><a class='expander' href='#'><span class='hide aPath'>cm9vdA==.ZXNwb3J0</span><span class='hide vPath'>cm9vdA==.ZXNwb3J0</span><span class='hide pos'>0</span><img src="themes/dot.gif" title="Expand/Collapse" alt="Expand/Collapse" class="icon ic_b_plus" /></a></div><div class='block'><a href='db_operations.php?server=1&amp;db=esport&amp;token=072cd518cc3a900109a4b205988c1bdb'><img src="themes/dot.gif" title="Database operations" alt="Database operations" class="icon ic_s_db" /></a></div><a href='db_structure.php?server=1&amp;db=esport&amp;token=072cd518cc3a900109a4b205988c1bdb'>esport</a></li><li class='database'><div class='block'><i></i><b></b><a class='expander' href='#'><span class='hide aPath'>cm9vdA==.aW5mb3JtYXRpb25fc2NoZW1h</span><span class='hide vPath'>cm9vdA==.aW5mb3JtYXRpb25fc2NoZW1h</span><span class='hide pos'>0</span><img src="themes/dot.gif" title="Expand/Collapse" alt="Expand/Collapse" class="icon ic_b_plus" /></a></div><div class='block'><a href='db_operations.php?server=1&amp;db=information_schema&amp;token=072cd518cc3a900109a4b205988c1bdb'><img src="themes/dot.gif" title="Database operations" alt="Database operations" class="icon ic_s_db" /></a></div><a href='db_structure.php?server=1&amp;db=information_schema&amp;token=072cd518cc3a900109a4b205988c1bdb'>information_schema</a></li><li class='database'><div class='block'><i></i><b></b><a class='expander' href='#'><span class='hide aPath'>cm9vdA==.bXlzcWw=</span><span class='hide vPath'>cm9vdA==.bXlzcWw=</span><span class='hide pos'>0</span><img src="themes/dot.gif" title="Expand/Collapse" alt="Expand/Collapse" class="icon ic_b_plus" /></a></div><div class='block'><a href='db_operations.php?server=1&amp;db=mysql&amp;token=072cd518cc3a900109a4b205988c1bdb'><img src="themes/dot.gif" title="Database operations" alt="Database operations" class="icon ic_s_db" /></a></div><a href='db_structure.php?server=1&amp;db=mysql&amp;token=072cd518cc3a900109a4b205988c1bdb'>mysql</a></li><li class='database'><div class='block'><i></i><b></b><a class='expander' href='#'><span class='hide aPath'>cm9vdA==.cGVyZm9ybWFuY2Vfc2NoZW1h</span><span class='hide vPath'>cm9vdA==.cGVyZm9ybWFuY2Vfc2NoZW1h</span><span class='hide pos'>0</span><img src="themes/dot.gif" title="Expand/Collapse" alt="Expand/Collapse" class="icon ic_b_plus" /></a></div><div class='block'><a href='db_operations.php?server=1&amp;db=performance_schema&amp;token=072cd518cc3a900109a4b205988c1bdb'><img src="themes/dot.gif" title="Database operations" alt="Database operations" class="icon ic_s_db" /></a></div><a href='db_structure.php?server=1&amp;db=performance_schema&amp;token=072cd518cc3a900109a4b205988c1bdb'>performance_schema</a></li><li class='last database'><div class='block'><i></i><a class='expander' href='#'><span class='hide aPath'>cm9vdA==.dGVzdA==</span><span class='hide vPath'>cm9vdA==.dGVzdA==</span><span class='hide pos'>0</span><img src="themes/dot.gif" title="Expand/Collapse" alt="Expand/Collapse" class="icon ic_b_plus" /></a></div><div class='block'><a href='db_operations.php?server=1&amp;db=test&amp;token=072cd518cc3a900109a4b205988c1bdb'><img src="themes/dot.gif" title="Database operations" alt="Database operations" class="icon ic_s_db" /></a></div><a href='db_structure.php?server=1&amp;db=test&amp;token=072cd518cc3a900109a4b205988c1bdb'>test</a></li></ul></div></div></div></div><noscript><div class="error"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_error" /> Javascript must be enabled past this point</div></noscript><div id='floating_menubar'></div><div id='serverinfo'><img src="themes/dot.gif" title="" alt="" class="icon ic_s_host item" /><a href="index.php?token=072cd518cc3a900109a4b205988c1bdb" class="item">Server: localhost:3306</a><div class="clearfloat"></div></div><div id="topmenucontainer" class="menucontainer"><ul id="topmenu"  class="resizable-menu"><li><a class="tab" href="server_databases.php?db=&amp;token=072cd518cc3a900109a4b205988c1bdb" ><img src="themes/dot.gif" title="Databases" alt="Databases" class="icon ic_s_db" /> Databases</a></li><li><a class="tab" href="server_sql.php?db=&amp;token=072cd518cc3a900109a4b205988c1bdb" ><img src="themes/dot.gif" title="SQL" alt="SQL" class="icon ic_b_sql" /> SQL</a></li><li><a class="tab" href="server_status.php?db=&amp;token=072cd518cc3a900109a4b205988c1bdb" ><img src="themes/dot.gif" title="Status" alt="Status" class="icon ic_s_status" /> Status</a></li><li><a class="tab" href="server_privileges.php?db=&amp;token=072cd518cc3a900109a4b205988c1bdb&amp;viewing_mode=server" ><img src="themes/dot.gif" title="Users" alt="Users" class="icon ic_s_rights" /> Users</a></li><li><a class="tab" href="server_export.php?db=&amp;token=072cd518cc3a900109a4b205988c1bdb" ><img src="themes/dot.gif" title="Export" alt="Export" class="icon ic_b_export" /> Export</a></li><li><a class="tab" href="server_import.php?db=&amp;token=072cd518cc3a900109a4b205988c1bdb" ><img src="themes/dot.gif" title="Import" alt="Import" class="icon ic_b_import" /> Import</a></li><li><a class="tab" href="prefs_manage.php?db=&amp;token=072cd518cc3a900109a4b205988c1bdb" ><img src="themes/dot.gif" title="Settings" alt="Settings" class="icon ic_b_tblops" /> Settings</a></li><li><a class="tab" href="server_replication.php?db=&amp;token=072cd518cc3a900109a4b205988c1bdb" ><img src="themes/dot.gif" title="Replication" alt="Replication" class="icon ic_s_replication" /> Replication</a></li><li><a class="tab" href="server_variables.php?db=&amp;token=072cd518cc3a900109a4b205988c1bdb" ><img src="themes/dot.gif" title="Variables" alt="Variables" class="icon ic_s_vars" /> Variables</a></li><li><a class="tab" href="server_collations.php?db=&amp;token=072cd518cc3a900109a4b205988c1bdb" ><img src="themes/dot.gif" title="Charsets" alt="Charsets" class="icon ic_s_asci" /> Charsets</a></li><li><a class="tab" href="server_engines.php?db=&amp;token=072cd518cc3a900109a4b205988c1bdb" ><img src="themes/dot.gif" title="Engines" alt="Engines" class="icon ic_b_engine" /> Engines</a></li></ul>
+<div class="clearfloat"></div></div>
+<a id="goto_pagetop" href="#" title="Click on the bar to scroll to top of page"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_top" /></a><div id="page_content"><!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+<head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>phpMyAdmin</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+    <!--
+    html {
+        padding: 0;
+        margin: 0;
+    }
+    body  {
+        font-family: sans-serif;
+        font-size: small;
+        color: #000000;
+        background-color: #F5F5F5;
+        margin: 1em;
+    }
+    h1 {
+        margin: 0;
+        padding: 0.3em;
+        font-size: 1.4em;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #ff0000;
+    }
+    p {
+        margin: 0;
+        padding: 0.5em;
+        border: 0.1em solid red;
+        background-color: #ffeeee;
+    }
+    //-->
+    </style>
+</head>
+<body>
+<h1>phpMyAdmin - Error</h1>
+<p>export.php: Missing parameter: export_type&lt;a href="./doc/html/faq.html#faqmissingparameters" target="documentation"&gt;&lt;img src="themes/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help" /&gt;&lt;/a&gt;<br /></p>
+</body>
+</html>
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Base de données :  `esport`
---
-
--- --------------------------------------------------------
-
---
--- Structure de la table `categories`
---
-
-CREATE TABLE IF NOT EXISTS `categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(40) DEFAULT NULL,
-  `id_forum` int(11) DEFAULT NULL,
-  `created` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
-
---
--- Contenu de la table `categories`
---
-
-INSERT INTO `categories` (`id`, `name`, `id_forum`, `created`) VALUES
-(1, 'General', 3, '2014-06-10 07:15:00'),
-(2, 'Equipes', 3, '2014-06-16 04:09:00'),
-(3, 'General', 2, '2014-06-09 00:13:20');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `forums`
---
-
-CREATE TABLE IF NOT EXISTS `forums` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(40) DEFAULT NULL,
-  `created` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
-
---
--- Contenu de la table `forums`
---
-
-INSERT INTO `forums` (`id`, `name`, `created`) VALUES
-(1, 'LOL', '1212-12-12 12:12:12'),
-(2, 'WOW', '2014-06-16 00:00:00'),
-(3, 'CS', '2014-06-16 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `inscriptions`
---
-
-CREATE TABLE IF NOT EXISTS `inscriptions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_user` int(11) NOT NULL,
-  `id_team` int(11) NOT NULL,
-  `status` varchar(256) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `news`
---
-
-CREATE TABLE IF NOT EXISTS `news` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(256) NOT NULL,
-  `text` text NOT NULL,
-  `id_tournament` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `posts`
---
-
-CREATE TABLE IF NOT EXISTS `posts` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_thread` int(11) DEFAULT NULL,
-  `id_author` int(11) DEFAULT NULL,
-  `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `teams`
---
-
-CREATE TABLE IF NOT EXISTS `teams` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name_team` varchar(256) NOT NULL,
-  `id_tournois` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `threads`
---
-
-CREATE TABLE IF NOT EXISTS `threads` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(40) DEFAULT NULL,
-  `id_category` int(11) DEFAULT NULL,
-  `created` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
-
---
--- Contenu de la table `threads`
---
-
-INSERT INTO `threads` (`id`, `name`, `id_category`, `created`) VALUES
-(1, 'Equipe Bubulle au taquet', 1, '2014-06-09 05:00:00'),
-(2, 'Equipe Louloute bug', 1, '2014-06-16 00:13:00');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `tournaments`
---
-
-CREATE TABLE IF NOT EXISTS `tournaments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name_tournament` varchar(256) DEFAULT NULL,
-  `start_tournament` datetime DEFAULT NULL,
-  `end_tournament` datetime DEFAULT NULL,
-  `start_register` datetime DEFAULT NULL,
-  `end_register` datetime DEFAULT NULL,
-  `inscrits_max` int(11) DEFAULT NULL,
-  `price` int(11) DEFAULT NULL,
-  `gamer_max` int(11) DEFAULT NULL,
-  `remplace_max` int(11) DEFAULT NULL,
-  `id_forum` int(11) DEFAULT NULL,
-  `tweet_off` varchar(500) DEFAULT NULL,
-  `tweet_flood` varchar(500) DEFAULT NULL,
-  `description` varchar(500) DEFAULT NULL,
-  `name_game` varchar(256) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
-
---
--- Contenu de la table `tournaments`
---
-
-INSERT INTO `tournaments` (`id`, `name_tournament`, `start_tournament`, `end_tournament`, `start_register`, `end_register`, `inscrits_max`, `price`, `gamer_max`, `remplace_max`, `id_forum`, `tweet_off`, `tweet_flood`, `description`, `name_game`) VALUES
-(12, 'Tournois de Lauwl', '2014-09-22 00:00:00', '2014-10-10 00:00:00', '2014-09-12 00:00:00', '2014-09-12 23:42:00', 200, 10, 5, 2, 1, '<a class="twitter-timeline" href="https://twitter.com/42esport" data-widget-id="477431927146692610">Tweets by @42esport</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?''http'':''https'';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>', '<a class="twitter-timeline" href="https://twitter.com/42esport" data-widget-id="477431927146692610">Tweets by @42esport</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?''http'':''https'';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>', 'Ce tournois est trop bien', 'League of Legends');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `users`
---
-
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(40) NOT NULL,
-  `password` varchar(40) DEFAULT NULL,
-  `name` varchar(40) DEFAULT NULL,
-  `lastname` varchar(40) DEFAULT NULL,
-  `email` varchar(40) DEFAULT NULL,
-  `type` varchar(10) DEFAULT 'user',
-  `birthdate` date DEFAULT NULL,
-  `status` varchar(20) DEFAULT NULL,
-  `created_profile` date DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
-
---
--- Contenu de la table `users`
---
-
-INSERT INTO `users` (`id`, `username`, `password`, `name`, `lastname`, `email`, `type`, `birthdate`, `status`, `created_profile`) VALUES
-(1, 'Supertoto', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'Admin', '1990-12-12', 'Normal', NULL),
-(2, 'Supertata', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'En attente', NULL),
-(3, 'Supertiti', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'Admin', '1990-12-12', 'Normal', NULL),
-(4, 'Supertutu', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Banni', NULL),
-(5, 'Supertete', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Suspendu', NULL),
-(6, 'Minitoto', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Normal', NULL),
-(7, 'Minitata', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Normal', NULL),
-(8, 'Minititi', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Suspendu', NULL);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `videos`
---
-
-CREATE TABLE IF NOT EXISTS `videos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_tournament` int(11) NOT NULL,
-  `url_video` varchar(535) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+</div><script type="text/javascript">// <![CDATA[
+AJAX.scriptHandler;
+$(function() {});
+// ]]></script></body></html>
