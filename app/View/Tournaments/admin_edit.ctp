@@ -28,4 +28,5 @@
 <br><hr class='hr-color'/>
 <?= $this->Form->input('id_forum', array('label' => 'id du forum correspondant', 'type' => 'text')); ?>
 <br>
-<?= $this->Form->end(array('label' => 'Ajouter ce tournoi!', 'class' => 'btn btn-primary')); ?>
+<?= $this->Form->input('id', array('type' => 'hidden')); ?>
+<?= $this->Form->end(array('label' => 'Valider la modif', 'class' => 'btn btn-primary')); ?>

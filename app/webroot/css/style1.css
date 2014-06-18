@@ -91,6 +91,15 @@ div.my-nav-g {
   border-radius: 6px;
 }
 
+.hr-color {
+	margin-bottom: 50px;
+	height: 1px;
+	color: #D1D1D1;
+	background-color: #D1D1D1;
+	border: 1;
+	box-shadow: 1px 1px 0px #FFFFFF;
+}
+
 img {
 	width: 260px;
 }

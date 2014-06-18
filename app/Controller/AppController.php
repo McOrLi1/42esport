@@ -33,6 +33,7 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 
 	public $helpers = array('Html', 'Form', 'Session', 'HForum', 'HAdmin', 'HLayout');
+	public $components = array('Session');
 
 	public function beforeFilter () {
 
