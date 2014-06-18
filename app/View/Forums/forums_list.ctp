@@ -1,3 +1,4 @@
+<?= $this->HForum->header('forums', null) ?>
 <?php foreach ($forums as $k => $d): $d = current($d); ?>
-<?php echo $this->HForum->content($d, 'categories'); ?>
+	<?= $this->HForum->content('forums', $d); ?>
 <?php endforeach; ?>

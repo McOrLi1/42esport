@@ -47,6 +47,31 @@ div.my-nav-g {
 	color: inherit;
 	background-color: #eee;
 }
+
+.bg-green {
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 6px;
+	color: white;
+	background-color: #66A566;
+}
+
+.bg-blue {
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 6px;
+	color: white;
+	background-color: #6699FF;
+}
+
+.bg-purple {
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 6px;
+	color: white;
+	background-color: #925EC7;
+}
+
 .twitch {
 	padding-left: 6px;
     padding-right: 6px;
@@ -117,4 +142,8 @@ body.forum-bg {
 
 .my-txt-error {
 	font-color: red;
+}
+
+.my-txt-blue {
+	font-color: blue;
 }

@@ -35,6 +35,8 @@ class AppController extends Controller {
 	public $helpers = array('Html', 'Form', 'Session', 'HForum', 'HAdmin', 'HLayout');
 
 	public function beforeFilter () {
+
+		date_default_timezone_set('Europe/Paris');
 		if (isset($this->request->prefix) && $this->request->prefix === 'admin') {
 			$this->layout = 'admin';
 		}

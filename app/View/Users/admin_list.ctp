@@ -1,7 +1,9 @@
+
 <div class="paddb02">
 	<h2>Gestion des utilisateurs</h2>
-	<?= $this->Html->link('++ Ajouter un utilisateur', array('controller' => 'users', 'action' => 'add')) ?>
+	<?= $this->Html->link('++ Nouvel utilisateur', array('action' => 'add')) ?>
 </div>
+
 <div class="table-responsive">
 	<table class="table table-hover table-striped">
 		<tr>
@@ -23,34 +25,11 @@
 				<td><?= $d['lastname']; ?></td>
 				<td><?= $d['birthdate']; ?></td>
 				<td><?= $d['email']; ?></td>
+				<td><?= $this->HAdmin->list_type($d['type']); ?></td>
+				<td><?= $this->HAdmin->list_status($d['status']); ?></td>
 				<td>
-				<?php
-					echo '<span class="label ';
-					switch ($d['type']) {
-						case "Admin": echo 'label-success'; break;
-						case "User": echo 'label-default'; break;
-					}
-					echo '">'
-				?>
-				<?= $d['type']; ?>
-				</td>
-				<td>
-				<?php
-					echo '<span class="label ';
-					switch ($d['status']) {
-						case "Normal": echo 'label-info'; break;
-						case "Banni": echo 'label-danger'; break;
-						case "Suspendu": echo 'label-default'; break;
-						case "En attente": echo 'label-warning'; break;
-					}
-					echo '">'
-				?>
-				<?= $d['status']; ?>
-				</span>
-				</td>
-				<td>
-					<?= $this->Html->link('Editer', array('controller' => 'users', 'action' => 'edit', $d['id'])) ?>
-					<?= $this->Html->link('Supprimer', array('controller' => 'users', 'action' => 'delete', $d['id']), null, 'Etes vous sûr de vouloir supprimer cet utilisateur ?') ?>
+					<?= $this->Html->link('Editer', array('action' => 'edit', $d['id'])) ?>
+					<?= $this->Html->link('Supprimer', array('action' => 'delete', $d['id']), null, 'Etes vous sûr de vouloir supprimer cet utilisateur ?') ?>
 				</td>
 			</tr>
 		<?php endforeach; ?>

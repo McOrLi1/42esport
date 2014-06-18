@@ -1,6 +1,6 @@
 <div class="paddb02">
-	<h2>Gestion des utilisateurs: ajouter un utilisateur</h2>
-	<?= $this->Html->link('<< Retour gestion user', array('action' => 'list', 'admin' => true)); ?>
+	<h2>Gestion des utilisateurs : Ajouter un utilisateur</h2>
+	<?= $this->Html->link('<< Gestion user', array('action' => 'list')); ?>
 	<br>
 	<?= $this->Form->create('User'); ?>
 </div>

@@ -1,7 +1,6 @@
-
 <div class="paddb02">
-<h2>Edition de profil</h2>
-	<?= $this->Html->link('<< Retour gestion user', array('action' => 'list')); ?>
+	<h2>Gestion des utilisateurs : Editer un utilisateur</h2>
+	<?= $this->Html->link('<< Gestion user', array('action' => 'list')); ?>
 	<br>
 	<?= $this->Form->create('User'); ?>
 </div>

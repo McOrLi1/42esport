@@ -13,4 +13,26 @@ class HAdminHelper extends AppHelper {
 		return ($content);
 	}
 
+	public function list_type($type) {
+		$content = '<span class="label ';
+		switch ($type) {
+			case "Admin": $content .= 'label-success'; break;
+			case "User": $content .= 'label-default'; break;
+		}
+		$content .= '">'.$type.'</span>';
+		return ($content);
+	}
+
+	public function list_status($status) {
+		$content = '<span class="label ';
+		switch ($status) {
+			case "Normal": $content .= 'label-info'; break;
+			case "Banni": $content .= 'label-danger'; break;
+			case "Suspendu": $content .= 'label-default'; break;
+			case "En attente": $content .= 'label-warning'; break;
+		}
+		$content .= '">'.$status.'</span>';
+		return ($content);
+	}
+
 }

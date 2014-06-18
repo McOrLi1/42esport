@@ -19,4 +19,11 @@ class Forum extends AppModel {
 				)
 			)
 		);
+
+	public function beforeSave($options = array()) {
+		parent::beforeSave($options);
+		if (isset($this->data['Forum']['timestamp'])) {
+			$this->data['Forum']['created'] = date("Y-m-d H-i-s", $this->data['Forum']['timestamp']);
+		}
+	}
 }
