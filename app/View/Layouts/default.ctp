@@ -34,13 +34,13 @@
 <!--content-->
 		<div class="row">
 			<div class="col-md-3">
-				<div class="jumbotron opa">
+				<div class="jumbotron">
 					<?= $this->element('sidebar_tournament'); ?>
 				</div>
-				<div class="jumbotron opa">
+				<div class="jumbotron">
 					<h3>Planing</h3>
 				</div>
-				<div class="jumbotron opa">
+				<div class="jumbotron">
 					<h3>Forum</h3>
 				</div>
 			</div>
@@ -55,12 +55,12 @@
 
 				<div class="row">
 					<div class="col-md-6">
-						<div class="jumbotron opa">
+						<div class="jumbotron">
 							<h3>News</h3>
 						</div>
 					</div>
 					<div class="col-md-6">
-						<div class="jumbotron opa">
+						<div class="jumbotron">
 							<h3>News</h3>
 						</div>
 					</div>
