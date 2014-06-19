@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost:3306
--- Généré le :  Mer 18 Juin 2014 à 08:26
+-- Généré le :  Jeu 19 Juin 2014 à 08:13
 -- Version du serveur :  5.5.36
 -- Version de PHP :  5.4.26
 
@@ -165,15 +165,18 @@ CREATE TABLE IF NOT EXISTS `tournaments` (
   `tweet_flood` varchar(500) DEFAULT NULL,
   `description` varchar(500) DEFAULT NULL,
   `name_game` varchar(256) DEFAULT NULL,
+  `bg_url` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Contenu de la table `tournaments`
 --
 
-INSERT INTO `tournaments` (`id`, `name_tournament`, `start_tournament`, `end_tournament`, `start_register`, `end_register`, `inscrits_max`, `price`, `gamer_max`, `remplace_max`, `id_forum`, `tweet_off`, `tweet_flood`, `description`, `name_game`) VALUES
-(12, 'Tournois de Lauwl', '2014-09-22 00:00:00', '2014-10-10 00:00:00', '2014-09-12 00:00:00', '2014-09-12 23:42:00', 200, 10, 5, 2, 1, '<a class="twitter-timeline" href="https://twitter.com/42esport" data-widget-id="477431927146692610">Tweets by @42esport</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?''http'':''https'';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>', '<a class="twitter-timeline" href="https://twitter.com/42esport" data-widget-id="477431927146692610">Tweets by @42esport</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?''http'':''https'';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>', 'Ce tournois est trop bien', 'League of Legends');
+INSERT INTO `tournaments` (`id`, `name_tournament`, `start_tournament`, `end_tournament`, `start_register`, `end_register`, `inscrits_max`, `price`, `gamer_max`, `remplace_max`, `id_forum`, `tweet_off`, `tweet_flood`, `description`, `name_game`, `bg_url`) VALUES
+(12, 'Tournois de Lauwl', '2014-09-22 00:00:00', '2014-10-10 00:00:00', '2014-09-12 00:00:00', '2014-09-12 23:42:00', 200, 10, 5, 2, 1, '<a class="twitter-timeline" href="https://twitter.com/42esport" data-widget-id="477431927146692610">Tweets by @42esport</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?''http'':''https'';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>', '<a class="twitter-timeline" href="https://twitter.com/42esport" data-widget-id="477431927146692610">Tweets by @42esport</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?''http'':''https'';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>', 'Ce tournois est trop bien', 'LOL', 'http://euw.leagueoflegends.com/sites/default/files/upload/art/wp_alistar_vs_olaf_1920x1080.jpg'),
+(13, 'counter noob', '2014-12-13 12:11:56', '2014-12-23 12:02:56', '2014-12-13 08:11:56', '2014-12-26 12:11:56', 500, 10, 5, 2, 3, '<a class="twitter-timeline" href="https://twitter.com/42esport" data-widget-id="477431927146692610">Tweets by @42esport</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?''http'':''https'';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>', '<a class="twitter-timeline" href="https://twitter.com/42esport" data-widget-id="477431927146692610">Tweets by @42esport</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?''http'':''https'';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>', 'hmjhkfyhrtegr', 'CS', 'http://img0.gm.gtsstatic.com/wallpapers/d45a577e1e36562d19ff87bceb52d436_large.jpeg'),
+(14, 'Woweur de la mort qui tue', '2014-10-13 21:00:00', '2014-10-13 22:00:00', '2014-10-13 20:00:00', '2014-10-13 20:30:00', 100, 10, 2, 1, 2, '<a class="twitter-timeline" href="https://twitter.com/42esport" data-widget-id="477431927146692610">Tweets by @42esport</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?''http'':''https'';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>', '<a class="twitter-timeline" href="https://twitter.com/42esport" data-widget-id="477431927146692610">Tweets by @42esport</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?''http'':''https'';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>', 'efrwbeitjh', 'WOW', 'http://mathieu.ammixe.fr/wp-content/uploads/2013/03/hd-wallpaper-world-of-warcraft-3-1.jpg');
 
 -- --------------------------------------------------------
 
