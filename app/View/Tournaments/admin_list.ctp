@@ -6,7 +6,7 @@
 <div class="table-responsive">
 	<table class="table table-hover table-striped">
 		<tr>
-			<!-- <th>Id</th> 
+			<th>Id</th> 
 			<th>Name Game</th>
 			<th>Name Tournament</th>
 			<th>Start Tournament</th>
@@ -14,7 +14,8 @@
 			<th>Start register</th>
 			<th>End register</th>
 			<th>Inscrits max</th>
-	 -->		<!--
+			<th>Action</th>
+			<!--
 			<th>Gamer max</th>
 			<th>Remplace max</th>
 			<th>Price</th>
@@ -26,15 +27,15 @@
 		</tr>
 		<?php foreach ($tournaments as $k => $d): $d = current($d); ?>
 			<tr>
-				<!-- <td><?= $d['id']; ?></td> -->
+				<td><?= $d['id']; ?></td>
 				<td><?= $d['name_game']; ?></td>
-<!-- 				<td><?= $d['name_tournament']; ?></td>
+				<td><?= $d['name_tournament']; ?></td>
 				<td><?= $d['start_tournament']; ?></td>
 				<td><?= $d['end_tournament']; ?></td>
 				<td><?= $d['start_register']; ?></td>
 				<td><?= $d['end_register']; ?></td>
 				<td><?= $d['inscrits_max']; ?></td>
- -->				<!--
+				<!--
 				<td><?= $d['gamer_max']; ?></td>
 				<td><?= $d['remplace_max']; ?></td>
 				<td><?= $d['price']; ?></td>
