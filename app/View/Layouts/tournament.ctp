@@ -36,7 +36,7 @@
 		<div class="row">
 			<div class="col-md-3">
 				<div class="jumbotron">
-					<h3>Débute dans 2j et 05h50</h3>
+					<?= $this->HTournament->date_register($tournament['Tournament']['end_tournament']); ?>
 				</div>
 				<div class="jumbotron">
 					<h3 style="color:red;">Inscription</h3>
@@ -51,7 +51,13 @@
 
 			<div class="col-md-6">
 				<div class="jumbotron">
-					<h3 style="color:green;">Infos General</h3>
+					<?= $this->HTournament->info($tournament['Tournament']['name_tournament']); ?>
+					<?= $this->HTournament->game($tournament['Tournament']['name_game']); ?>
+					<hr class='hr-color'>
+					<?= $this->HTournament->date($tournament['Tournament']['start_tournament'], $tournament['Tournament']['end_tournament']); ?>
+					<hr class='hr-color'>
+					<?= $this->HTournament->description($tournament['Tournament']['description']); ?>
+					<?= $this->HTournament->gmap($tournament['Tournament']['gmap']); ?>
 				</div>
 				<div class="jumbotron">
 					<h3>News</h3>
@@ -76,10 +82,10 @@
 
 			<div class="col-md-3">
 				<div class="paddb02">
-					<?= $this->element('tweet'); ?>
+					<?= $this->HTournament->tweet_off($tournament['Tournament']['tweet_off']); ?>
 				</div>
 				<div class="paddb02">
-					<?= $this->element('tweet'); ?>
+					<?= $this->HTournament->tweet_flood($tournament['Tournament']['tweet_flood']); ?>
 				</div>
 				<div class="jumbotron twitch" style="padding-left: 6px; padding-right: 6px;">
 					<?= $this->element('twitch'); ?>
@@ -95,3 +101,4 @@
 	<?= $this->Html->script('bootstrap.min.js'); ?>
 </body>
 </html>
+
