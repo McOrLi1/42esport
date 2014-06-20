@@ -45,7 +45,7 @@
 					<h3>Planing</h3>
 				</div>
 				<div class="jumbotron">
-					<h3>Forum</h3>
+					<?= $this->Html->link('Forum', array('controller' => 'forums', 'action' => 'categories_list', $tournament['Tournament']['id_forum'])); ?>
 				</div>
 			</div>
 
