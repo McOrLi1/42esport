@@ -35,13 +35,17 @@
 		<div class="row">
 			<div class="col-md-3">
 				<div class="bg">
-					<h2>coucou toi!!</h2>
+					<?php $user = current($user); ?>
+					<?= '<h3 style="text-align: center;">'."Bonjour ".$user['username'].' !</h3>'; ?>
+				</div>
+				<div class="bg">
+					<h3 style="text-align: center">EDIT</h3>
 				</div>
 				<div class="bg">
 					<?= $this->element('sidebar_tournament'); ?>
 				</div>
 				<div class="bg">
-					<h3>Forum</h3>
+					<h3 style="text-align: center;">Forum</h3>
 				</div>
 			</div>
 

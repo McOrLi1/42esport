@@ -34,7 +34,7 @@
 <!--content-->
 		<div class="row">
 			<div class="col-md-3">
-				<div class="jumbotron">
+				<div class="bg">
 					<?= $this->element('sidebar_tournament'); ?>
 				</div>
 				<div class="jumbotron">
