@@ -8,4 +8,4 @@
 <?= $this->Form->input('name', array('label' => 'Nom du forum')); ?>
 <?= $this->Form->input('created', array('label' => 'Date de creation (yyyy-mm-dd hh:mm:ss)', 'type' => 'text')); ?>
 <?= $this->Form->input('id', array('type' => 'hidden')); ?>
-<?= $this->Form->end(array('label' => 'Valider la modif', 'class' => 'btn btn-primary')); ?>
+<?= $this->Form->end(array('label' => 'Valider la modification', 'class' => 'btn btn-primary')); ?>

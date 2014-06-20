@@ -1,18 +1,18 @@
 <div class="paddb02">
-	<h2>Gestion de tournois</h2>
-	<?= $this->Html->link('++ Nouveau tournois', array('action' => 'add')) ?>
+	<h2>Gestion des tournois</h2>
+	<?= $this->Html->link('++ Nouveau tournoi', array('action' => 'add')) ?>
 </div>
 
 <div class="table-responsive">
 	<table class="table table-hover table-striped">
 		<tr>
 			<th>Id</th> 
-			<th>Name Game</th>
-			<th>Name Tournament</th>
-			<th>Start Tournament</th>
-			<th>End tournament</th>
-			<th>Start register</th>
-			<th>End register</th>
+			<th>Nom du jeu</th>
+			<th>Nom du tournoi</th>
+			<th>Début du tournoi</th>
+			<th>Fin du tournoi</th>
+			<th>Début des inscriptions</th>
+			<th>Fin des inscriptions</th>
 			<th>Inscrits max</th>
 			<th>Action</th>
 			<!--

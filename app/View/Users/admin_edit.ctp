@@ -1,5 +1,5 @@
 <div class="paddb02">
-	<h2>Gestion des utilisateurs : Editer un utilisateur</h2>
+	<h2>Gestion des utilisateurs : Éditer un utilisateur</h2>
 	<?= $this->Html->link('<< Gestion user', array('action' => 'list')); ?>
 	<br>
 	<?= $this->Form->create('User'); ?>
@@ -14,4 +14,4 @@
 <?= $this->Form->input('birthdate', array('label' => 'Date de naissance (yyyy-mm-dd)', 'type' => 'text')); ?>
 <?= $this->Form->input('status', array('type' => 'select', 'options' => array('Normal' => 'Normal' , 'Banni' => 'Banni', 'Suspendu' => 'Suspendu' , 'En attente' => 'En attente'))); ?>
 <?= $this->Form->input('id', array('type' => 'hidden')); ?>
-<?= $this->Form->end(array('label' => 'Valider la modif', 'class' => 'btn btn-primary')); ?>
+<?= $this->Form->end(array('label' => 'Valider la modification', 'class' => 'btn btn-primary')); ?>
