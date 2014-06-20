@@ -16,7 +16,7 @@ class HTournamentHelper extends AppHelper {
 	}
 
 	public function date($start_tournament, $end_tournament) {
-		return ('<h4>'."Tournois du ".'<br>'.$start_tournament. " au ".$end_tournament.'</h4>');
+		return ('<h4>'."Tournoi du : ".$start_tournament. "<br> jusqu'au : ".$end_tournament.'</h4>');
 	}
 
 	public function description($description) {
@@ -24,7 +24,7 @@ class HTournamentHelper extends AppHelper {
 	}
 
 	public function date_register($end_register) {
-		return ('<h3 style="text-align:center;">'."Inscription jusau'au :".'<br>'.'<br>'.$end_register.'</h3>');
+		return ('<h3 style="text-align:center;">'."Inscription jusqu'au :".'<br>'.'<br>'.$end_register.'</h3>');
 	}
 
 	public function tweet_off($tweet_off) {

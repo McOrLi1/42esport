@@ -39,13 +39,15 @@
 					<?= $this->HTournament->date_register($tournament['Tournament']['end_tournament']); ?>
 				</div>
 				<div class="jumbotron">
-					<h3 style="color:red;">Inscription</h3>
+					<h3 style="text-align: center; color:red;">Inscription</h3>
 				</div>
 				<div class="jumbotron">
-					<h3>Planing</h3>
+					<h3 style="text-align: center;">Planing</h3>
 				</div>
-				<div class="jumbotron">
+				<div class="bg">
+					<h3 style="text-align: center;">
 					<?= $this->Html->link('Forum', array('controller' => 'forums', 'action' => 'categories_list', $tournament['Tournament']['id_forum'])); ?>
+					</h3>
 				</div>
 			</div>
 

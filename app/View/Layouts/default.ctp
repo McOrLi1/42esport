@@ -38,10 +38,12 @@
 					<?= $this->element('sidebar_tournament'); ?>
 				</div>
 				<div class="jumbotron">
-					<h3>Planing</h3>
+					<h3 style="text-align: center;">Planing</h3>
 				</div>
-				<div class="jumbotron">
-					<h3>Forum</h3>
+				<div class="bg" style="text-align: center;">
+					<h3>
+					<?= $this->Html->link('Forums', array('controller' => 'forums', 'action' => 'forums_list')); ?>
+					</h3>
 				</div>
 			</div>
 
