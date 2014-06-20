@@ -19,6 +19,86 @@ a.active {
 	display: block-inline;
 }
 
+#picture-ldm{
+	background-size: 100%;
+	min-height: 380px;
+	background-image: url('../img/MULTIPASS.png');
+	background-repeat: no-repeat;
+	margin-top: -30px;
+font-family: verdana;
+}
+
+.picture {
+	height: 353px;
+}
+
+.placement {
+	position: relative;
+	width: 500px;
+	height: 220px;
+	padding-top: 109px;
+}
+.lmp_info {
+	position: relative;
+	margin-left: 252px;
+	width: 300px;
+	height: 120px;
+}
+
+.lmp_photo {
+ 	float: left;
+	width: 90px;
+	height: 120px;
+	margin-top: 2px;
+}
+
+.lmp_user-name {
+	float: left;
+	margin-left: 25px;
+	width: 150px;
+	height: 13px;
+}
+
+.lmp_user-info {
+	float: left;
+	margin-left: 25px;
+	margin-top: 7px;
+	width: 164px;
+	height: 50px;
+}
+
+.lmp_user-footer {
+float: left;
+	margin-left: 25px;
+	width: 164px;
+	height: 34px;
+}
+
+.rating {  
+   direction: rtl;  
+}  
+.rating a {  
+   color: #aaa;  
+   text-decoration: none;  
+   font-size: 2.5em;  
+   transition: color .4s;  
+}  
+.rating a:hover,  
+.rating a:focus,  
+.rating a:hover ~ a,  
+.rating a:focus ~ a {  
+   color: #3B83C2;  
+   cursor: pointer;  
+}  
+
+.lmp_user-notation {
+	float: left;
+	margin-left: -80px;
+	margin-top: 40px;
+	width: 244px;
+	height: 34px;
+}
+
 div.my-nav-g {
 	padding: 0px;
 }
@@ -98,6 +178,10 @@ div.my-nav-g {
 	background-color: #D1D1D1;
 	border: 1;
 	box-shadow: 1px 1px 0px #FFFFFF;
+}
+
+.color {
+	background-color: red;
 }
 
 img {

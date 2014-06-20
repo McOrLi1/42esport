@@ -66,4 +66,9 @@ class UsersController extends AppController {
 		$this->set('sidebar', 'users');
 	}
 
+	public function profile($id = null) {
+		parent::beforeRender();
+		$this->set('user', $this->User->findById($id));
+		$this->layout = 'profile';
+	}
 }
