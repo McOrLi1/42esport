@@ -51,6 +51,11 @@
 				<div>
 					<?= $this->Session->flash(); ?>
 				</div>
+				<?php if ($this->fetch('content')): ?>
+				<div class="bg">
+					<?= $this->fetch('content'); ?>
+				</div>
+			<?php endif ; ?>
 				<div class="jumbotron">
 					<h3>News</h3>
 				</div>
@@ -69,9 +74,6 @@
 							<h3>News</h3>
 						</div>
 					</div>
-				</div>
-				<div class="bg">
-					<?= $this->fetch('content'); ?>
 				</div>
 			</div>
 
