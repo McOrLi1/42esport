@@ -2,10 +2,10 @@
 -- version 4.1.9
 -- http://www.phpmyadmin.net
 --
--- Client :  localhost:3306
--- Généré le :  Ven 20 Juin 2014 à 01:59
--- Version du serveur :  5.5.36
--- Version de PHP :  5.4.26
+-- Host: localhost:3306
+-- Generation Time: Jun 21, 2014 at 02:48 AM
+-- Server version: 5.5.36
+-- PHP Version: 5.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données :  `esport`
+-- Database: `esport`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE IF NOT EXISTS `categories` (
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Contenu de la table `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `id_forum`, `created`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `categories` (`id`, `name`, `id_forum`, `created`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `forums`
+-- Table structure for table `forums`
 --
 
 CREATE TABLE IF NOT EXISTS `forums` (
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `forums` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Contenu de la table `forums`
+-- Dumping data for table `forums`
 --
 
 INSERT INTO `forums` (`id`, `name`, `created`) VALUES
@@ -68,7 +68,7 @@ INSERT INTO `forums` (`id`, `name`, `created`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `inscriptions`
+-- Table structure for table `inscriptions`
 --
 
 CREATE TABLE IF NOT EXISTS `inscriptions` (
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `inscriptions` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `news`
+-- Table structure for table `news`
 --
 
 CREATE TABLE IF NOT EXISTS `news` (
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `news` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `posts`
+-- Table structure for table `posts`
 --
 
 CREATE TABLE IF NOT EXISTS `posts` (
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `teams`
+-- Table structure for table `teams`
 --
 
 CREATE TABLE IF NOT EXISTS `teams` (
@@ -124,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `teams` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `threads`
+-- Table structure for table `threads`
 --
 
 CREATE TABLE IF NOT EXISTS `threads` (
@@ -136,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `threads` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Contenu de la table `threads`
+-- Dumping data for table `threads`
 --
 
 INSERT INTO `threads` (`id`, `name`, `id_category`, `created`) VALUES
@@ -146,7 +146,7 @@ INSERT INTO `threads` (`id`, `name`, `id_category`, `created`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `tournaments`
+-- Table structure for table `tournaments`
 --
 
 CREATE TABLE IF NOT EXISTS `tournaments` (
@@ -171,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `tournaments` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
--- Contenu de la table `tournaments`
+-- Dumping data for table `tournaments`
 --
 
 INSERT INTO `tournaments` (`id`, `name_tournament`, `start_tournament`, `end_tournament`, `start_register`, `end_register`, `inscrits_max`, `price`, `gamer_max`, `remplace_max`, `id_forum`, `tweet_off`, `tweet_flood`, `description`, `name_game`, `bg_url`, `gmap`) VALUES
@@ -183,7 +183,7 @@ INSERT INTO `tournaments` (`id`, `name_tournament`, `start_tournament`, `end_tou
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -197,28 +197,29 @@ CREATE TABLE IF NOT EXISTS `users` (
   `birthdate` date DEFAULT NULL,
   `status` varchar(20) DEFAULT NULL,
   `created_profile` date DEFAULT NULL,
+  `photo` varchar(256) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
--- Contenu de la table `users`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `name`, `lastname`, `email`, `type`, `birthdate`, `status`, `created_profile`) VALUES
-(1, 'Supertoto', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'Admin', '1990-12-12', 'Normal', NULL),
-(2, 'Supertata', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'En attente', NULL),
-(3, 'Supertiti', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'Admin', '1990-12-12', 'Normal', NULL),
-(4, 'Supertutu', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Banni', NULL),
-(5, 'Supertete', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Suspendu', NULL),
-(6, 'Minitoto', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Normal', NULL),
-(7, 'Minitata', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Normal', NULL),
-(8, 'Minititi', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Suspendu', NULL);
+INSERT INTO `users` (`id`, `username`, `password`, `name`, `lastname`, `email`, `type`, `birthdate`, `status`, `created_profile`, `photo`) VALUES
+(1, 'Supertoto', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'Admin', '1990-12-12', 'Normal', NULL, 'http://data.nimages.fr/flouckyouauw.jpg'),
+(2, 'fokoc', 'sdafsadf1sadfdsa', 'manon', 'budin', 'mbudin@student.42.fr', 'Admin', '1990-12-12', 'En attente', NULL, 'https://cdn.42.fr/userprofil/mbudin.jpg'),
+(3, 'Supertiti', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'Admin', '1990-12-12', 'Normal', NULL, ''),
+(4, 'Supertutu', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Banni', NULL, ''),
+(5, 'Supertete', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Suspendu', NULL, ''),
+(6, 'Minitoto', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Normal', NULL, ''),
+(7, 'Minitata', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Normal', NULL, ''),
+(8, 'Minititi', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Suspendu', NULL, '');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `videos`
+-- Table structure for table `videos`
 --
 
 CREATE TABLE IF NOT EXISTS `videos` (
