@@ -1,4 +1,4 @@
- <?php
+<?php
 class HLayoutHelper extends AppHelper {
 
 	public function homebar_elem($text, $icon, $position, $url) {

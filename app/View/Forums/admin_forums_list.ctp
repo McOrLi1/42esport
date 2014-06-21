@@ -9,7 +9,7 @@
 			<th>Nom</th>
 			<th>Crée le</th>
 			<th>Categories</th>
-			<th>Actions</th>
+			<th>Actions sur le forum</th>
 		</tr>
 		<?php foreach ($forums as $k => $d): $d = current($d); ?>
 			<tr>

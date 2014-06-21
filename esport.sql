@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jun 21, 2014 at 02:48 AM
+-- Generation Time: Jun 21, 2014 at 06:13 AM
 -- Server version: 5.5.36
 -- PHP Version: 5.4.26
 
@@ -32,16 +32,20 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `id_forum` int(11) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `id_forum`, `created`) VALUES
-(1, 'General', 3, '2014-06-10 07:15:00'),
+(1, 'General', 3, '2014-06-10 07:15:12'),
 (2, 'Equipes', 3, '2014-06-16 04:09:00'),
-(3, 'General', 2, '2014-06-09 00:13:20');
+(3, 'General', 2, '2014-06-09 00:13:20'),
+(6, 'Flood', 3, '2014-06-17 05:53:43'),
+(9, 'General', 1, '2014-06-17 08:15:15'),
+(10, 'Test', 1, '2014-06-17 08:15:31'),
+(12, 'Annonces Officielles', 2, '2014-06-17 21:57:15');
 
 -- --------------------------------------------------------
 
@@ -61,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `forums` (
 --
 
 INSERT INTO `forums` (`id`, `name`, `created`) VALUES
-(1, 'LOL', '1212-12-12 12:12:12'),
+(1, 'LOL', '4242-12-12 12:12:12'),
 (2, 'WOW', '2014-06-16 00:00:00'),
 (3, 'CS', '2014-06-16 00:00:00');
 
@@ -101,12 +105,33 @@ CREATE TABLE IF NOT EXISTS `news` (
 
 CREATE TABLE IF NOT EXISTS `posts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `content` text,
   `id_thread` int(11) DEFAULT NULL,
   `id_author` int(11) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `content`, `id_thread`, `id_author`, `created`, `modified`) VALUES
+(1, 'Ceci est un content', 2, 2, '2014-06-17 00:00:00', '2014-06-17 00:00:00'),
+(6, 'Tres bien poulette', 2, 2, '2014-06-19 07:18:05', '2014-06-19 07:18:05'),
+(16, 'Parle correctement petit', 2, 2, '2014-06-19 08:50:28', '2014-06-19 08:50:28'),
+(17, 'Flood', 4, 2, '2014-06-19 08:52:52', '2014-06-19 08:52:52'),
+(19, 'Flood Flood', 4, 2, '2014-06-19 08:53:16', '2014-06-19 08:53:16'),
+(20, 'Flood Flood Flood', 4, 2, '2014-06-19 08:53:24', '2014-06-20 12:27:19'),
+(21, '<img src="http://www.quickmeme.com/img/93/93f0eb66f8db28906cf1b437d7b7d1c9ca2b1d2b7bbb7d05350d280c3517536f.jpg"></img>', 4, 2, '2014-06-19 08:53:29', '2014-06-19 08:53:29'),
+(22, 'Nous recherchons désespérément un joueur.<br>Merci d''envoyer un cv et une lettre de motiv.<br>5 ans d''experience requis, payé 400e/mois.', 7, 2, '2014-06-20 12:22:13', '2014-06-20 12:22:13'),
+(24, 'Votez pour moi !!', 8, 2, '2014-06-20 12:40:13', '2014-06-20 12:40:22'),
+(25, 'Fill', 1, 2, '2014-06-20 03:44:36', '2014-06-20 03:44:36'),
+(31, 'test', 9, 2, '2014-06-20 06:39:38', '2014-06-20 06:39:38'),
+(32, 'Oki', 10, 2, '2014-06-21 02:43:49', '2014-06-21 02:43:49'),
+(33, 'Re', 11, 2, '2014-06-21 02:43:53', '2014-06-21 02:43:53'),
+(34, 'Nope', 10, 2, '2014-06-21 02:43:56', '2014-06-21 02:43:56');
 
 -- --------------------------------------------------------
 
@@ -133,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `threads` (
   `id_category` int(11) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `threads`
@@ -141,7 +166,12 @@ CREATE TABLE IF NOT EXISTS `threads` (
 
 INSERT INTO `threads` (`id`, `name`, `id_category`, `created`) VALUES
 (1, 'Equipe Bubulle au taquet', 1, '2014-06-09 05:00:00'),
-(2, 'Equipe Louloute bug', 1, '2014-06-16 00:13:00');
+(2, 'Equipe Louloute !!', 1, '2014-06-16 00:13:00'),
+(4, 'Salut ! Tu veux du flood ? Manges !!!', 6, '2014-06-17 22:01:30'),
+(7, 'Equipe entreprise cherche un joueur', 2, '2014-06-20 12:22:09'),
+(8, 'Concours du plus grand feeder', 9, '2014-06-20 12:40:11'),
+(10, 'Test', 10, '2014-06-20 18:40:55'),
+(11, 'Test 2', 10, '2014-06-21 14:30:50');
 
 -- --------------------------------------------------------
 
