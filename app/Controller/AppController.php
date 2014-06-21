@@ -33,9 +33,10 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 
 	public $helpers = array('Html', 'Form', 'Session', 'HForum', 'HAdmin', 'HLayout', 'HTournament');
-	public $components = array('Session');
+	public $components = array('Session', 'Auth');
 
 	public function beforeFilter () {
+		$this->Auth->allow();
 
 		date_default_timezone_set('Europe/Paris');
 		if (isset($this->request->prefix) && $this->request->prefix === 'admin') {

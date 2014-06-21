@@ -27,8 +27,8 @@ class UsersController extends AppController {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash("L'utilisateur a été modifié", 'notif');
-				$this->redirect(array('controller' => 'users', 'action' => 'list'));
-			}
+/*				$this->redirect(array('controller' => 'users', 'action' => 'list'));
+*/			}
 			else {
 				$this->set('notif_clr', 'Red');
 				$this->Session->setFlash("L'utilisateur n'a pu etre modifié", 'notif');
@@ -61,14 +61,32 @@ class UsersController extends AppController {
 
 	}
 
-	public function beforeRender() {
-		parent::beforeRender();
-		$this->set('sidebar', 'users');
+	
+	public function login() {
+
+		if (!empty($this->request->data))
+		{
+			if ($this->Auth->login()) {
+				$this->Session->setFlash("Vous etes loggé putain !!", 'notif');
+			}
+		}
 	}
 
-	public function profile($id = null) {
-		parent::beforeRender();
+	public function logout() {
+		$this->Auth->logout();
+		$this->set('notif_clr', 'Red');
+		$this->Session->setFlash("Au revoir", 'notif');
+		$this->redirect('/');
+	}
+
+	public function profile() {
+		$id = $this->Auth->user('id');
 		$this->set('user', $this->User->findById($id));
 		$this->layout = 'profile';
 	}
+
+	public function beforeRender() {
+		parent::beforeRender();
+		$this->set('sidebar', 'users');
+	}	
 }

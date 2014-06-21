@@ -48,6 +48,9 @@
 			</div>
 
 			<div class="col-md-6">
+				<div>
+					<?= $this->Session->flash(); ?>
+				</div>
 				<div class="jumbotron">
 					<h3>News</h3>
 				</div>
