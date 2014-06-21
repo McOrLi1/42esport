@@ -14,4 +14,5 @@
 <?= $this->Form->input('birthdate', array('label' => 'Date de naissance (yyyy-mm-dd)', 'type' => 'text')); ?>
 <?= $this->Form->input('status', array('type' => 'select', 'options' => array('Normal' => 'Normal' , 'Banni' => 'Banni', 'Suspendu' => 'Suspendu' , 'En attente' => 'En attente'))); ?>
 <?= $this->Form->input('id', array('type' => 'hidden')); ?>
+<?= $this->Form->input('photo', array('label' => 'Url photo de profile')); ?>
 <?= $this->Form->end(array('label' => 'Valider la modification', 'class' => 'btn btn-primary')); ?>

@@ -3,8 +3,8 @@
 <div id="picture-ldm" class="picture">
 	<div class="placement">
 		<div class="lmp_info">
-			<div class="color lmp_photo">
-
+			<div class="lmp_photo">
+				<?= '<img class="profile-p" src="'.$user['photo'].'">'; ?>
 			</div>
 			<div class="lmp_user-name">
 				<?= $user['username'] ?>
@@ -28,3 +28,4 @@
 		</div>
 	</div>
 </div>
+
