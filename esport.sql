@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jun 21, 2014 at 06:13 AM
+-- Generation Time: Jun 21, 2014 at 10:38 AM
 -- Server version: 5.5.36
 -- PHP Version: 5.4.26
 
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=37 ;
 
 --
 -- Dumping data for table `posts`
@@ -131,7 +131,9 @@ INSERT INTO `posts` (`id`, `content`, `id_thread`, `id_author`, `created`, `modi
 (31, 'test', 9, 2, '2014-06-20 06:39:38', '2014-06-20 06:39:38'),
 (32, 'Oki', 10, 2, '2014-06-21 02:43:49', '2014-06-21 02:43:49'),
 (33, 'Re', 11, 2, '2014-06-21 02:43:53', '2014-06-21 02:43:53'),
-(34, 'Nope', 10, 2, '2014-06-21 02:43:56', '2014-06-21 02:43:56');
+(34, 'Nope', 10, 2, '2014-06-21 02:43:56', '2014-06-21 02:43:56'),
+(35, 'et coucou', 4, 2, '2014-06-21 03:15:56', '2014-06-21 03:15:56'),
+(36, 'et coucou', 8, 2, '2014-06-21 04:49:11', '2014-06-21 04:49:11');
 
 -- --------------------------------------------------------
 
@@ -237,8 +239,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `name`, `lastname`, `email`, `type`, `birthdate`, `status`, `created_profile`, `photo`) VALUES
-(1, 'Supertoto', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'Admin', '1990-12-12', 'Normal', NULL, 'http://data.nimages.fr/flouckyouauw.jpg'),
-(2, 'fokoc', 'sdafsadf1sadfdsa', 'manon', 'budin', 'mbudin@student.42.fr', 'Admin', '1990-12-12', 'En attente', NULL, 'https://cdn.42.fr/userprofil/mbudin.jpg'),
+(1, 'Supertoto', '37bab098bbfd69a096d867c362ccf64c51c424f1', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Normal', NULL, 'http://data.nimages.fr/flouckyouauw.jpg'),
+(2, 'fakoc', '01a1fb212107be42f8d396a6056701827bdc7678', 'manon', 'budin', 'mbudin@student.42.fr', 'Admin', '1990-12-12', 'En attente', NULL, 'https://cdn.42.fr/userprofil/mbudin.jpg'),
 (3, 'Supertiti', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'Admin', '1990-12-12', 'Normal', NULL, ''),
 (4, 'Supertutu', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Banni', NULL, ''),
 (5, 'Supertete', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Suspendu', NULL, ''),
