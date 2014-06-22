@@ -134,15 +134,19 @@ class User extends AppModel {
 	}
 
 	public function beforeValidate($options = array()) {
-		if (!(isset($data['User']['ctrl_password']) && $data['User']['ctrl_password'] != '')) {
-			$data['User']['raw_password'] = 'aaaa11';
-			$data['User']['inherit'] = true;
+		if (isset($this->data['User']['new_password'])) {
+			if ($this->data['User']['new_password'] == '') {
+				$this->data['User']['inherit'] = true;
+				$this->data['User']['raw_password'] = 'aaaa11';
+			} else {
+				$this->data['User']['raw_password'] = $this->data['User']['new_password'];
+			}
 		}
 	}
 
 	public function beforeSave($options = array()) {
-		if (!$data['User']['inherit'] == true) {
-			$this->data['User']['password'] = AuthComponent::password($this->data['User']['password']);
+		if (!(isset($this->data['User']['inherit']))) {
+			$this->data['User']['password'] = AuthComponent::password($this->data['User']['raw_password']);
 		}
 	}
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jun 22, 2014 at 06:17 AM
+-- Generation Time: Jun 22, 2014 at 12:30 PM
 -- Server version: 5.5.36
 -- PHP Version: 5.4.26
 
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=36 ;
 
 --
 -- Dumping data for table `posts`
@@ -230,21 +230,23 @@ CREATE TABLE IF NOT EXISTS `users` (
   `photo` varchar(256) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `name`, `lastname`, `email`, `type`, `birthdate`, `status`, `created_profile`, `photo`) VALUES
-(1, 'Supertoto', '324a9a481d11e3375b175d0f5104f57fe2573836', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Normal', NULL, 'http://data.nimages.fr/flouckyouauw.jpg'),
+(1, 'Supertoto', '1d7e0b05ab7dd8f698d74471f357867286ae2181', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Normal', NULL, 'http://data.nimages.fr/flouckyouauw.jpg'),
 (2, 'fakoc', '01a1fb212107be42f8d396a6056701827bdc7678', 'manon', 'budin', 'mbudin@student.42.fr', 'Admin', '1990-12-12', 'En attente', NULL, 'https://cdn.42.fr/userprofil/mbudin.jpg'),
-(3, 'Supertiti', '324a9a481d11e3375b175d0f5104f57fe2573836', 'Toto', 'Grantoto', 'asdfa@mail.com', 'Admin', '1990-12-12', 'Normal', NULL, ''),
-(4, 'Supertutu', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Banni', NULL, ''),
-(5, 'Supertete', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Suspendu', NULL, ''),
-(6, 'Minitoto', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Normal', NULL, ''),
-(7, 'Minitata', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Normal', NULL, ''),
-(8, 'Minititi', 'sdafsadf1sadfdsa', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Suspendu', NULL, '');
+(3, 'Supertiti', '1d7e0b05ab7dd8f698d74471f357867286ae2181', 'Toto', 'Grantoto', 'asdfa@mail.com', 'Admin', '1990-12-12', 'Normal', NULL, ''),
+(4, 'Supertutu', '1d7e0b05ab7dd8f698d74471f357867286ae2181', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Banni', NULL, ''),
+(5, 'Supertete', '1d7e0b05ab7dd8f698d74471f357867286ae2181', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Suspendu', NULL, ''),
+(6, 'Minitoto', '1d7e0b05ab7dd8f698d74471f357867286ae2181', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Normal', NULL, ''),
+(7, 'Minitata', '1d7e0b05ab7dd8f698d74471f357867286ae2181', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Normal', NULL, ''),
+(8, 'Minititi', '1d7e0b05ab7dd8f698d74471f357867286ae2181', 'Toto', 'Grantoto', 'asdfa@mail.com', 'User', '1990-12-12', 'Suspendu', NULL, ''),
+(9, 'tototo', '1d7e0b05ab7dd8f698d74471f357867286ae2181', 'totototo', 'totototo', 'toto@mail.com', 'User', '1989-12-12', 'Normal', NULL, ''),
+(10, 'ZeAdminSpiderman', 'ed2ac4bb9475ae5f26ad0958103a8563815f3356', 'Vincent', 'TIMES', 'kikoulol92@mail.fr', 'Admin', '0000-00-00', 'Normal', NULL, '');
 
 -- --------------------------------------------------------
 

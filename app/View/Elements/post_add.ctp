@@ -5,6 +5,6 @@
 	<?= $this->Form->input('id_thread', array('type' => 'hidden', 'default' => $thread['id'])); ?>
 	<?= $this->Form->input('created', array('type' => 'hidden', 'default' => date('Y-m-d h:i:s', time()))); ?>
 	<?= $this->Form->input('modified', array('type' => 'hidden', 'default' => date('Y-m-d h:i:s', time()))); ?>
-	<?= $this->Form->input('id_author', array('type' => 'hidden', 'default' => 2)); ?>
+	<?= $this->Form->input('id_author', array('type' => 'hidden', 'default' => AuthComponent::user('id'))); ?>
 	<?= $this->Form->end(array('label' => 'Ok', 'class' => 'btn btn-primary')); ?>
 </div>

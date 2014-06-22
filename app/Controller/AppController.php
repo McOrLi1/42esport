@@ -30,6 +30,7 @@ App::uses('Controller', 'Controller');
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
+
 class AppController extends Controller {
 
 	public $helpers = array('Html', 'Form', 'Session', 'HForum', 'HAdmin', 'HLayout', 'HTournament');
@@ -42,4 +43,5 @@ class AppController extends Controller {
 			$this->layout = 'admin';
 		}
 	}
+
 }

@@ -26,8 +26,8 @@ class UsersController extends AppController {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash("L'utilisateur a été modifié", 'notif');
-/*				$this->redirect(array('controller' => 'users', 'action' => 'list'));
-*/			}
+				$this->redirect(array('controller' => 'users', 'action' => 'list'));
+			}
 			else {
 				$this->Session->setFlash("L'utilisateur n'a pu etre modifié", 'notif', array('color' => 'red'));
 			}
@@ -56,7 +56,7 @@ class UsersController extends AppController {
 			$this->redirect(array('controller' => 'users', 'action' => 'list'));
 		}
 	}
-	
+
 	public function login() {
 
 		if (!empty($this->request->data))
