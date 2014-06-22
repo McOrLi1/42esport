@@ -20,7 +20,7 @@ class User extends AppModel {
 				'message' => 'Nom deja pris'
 				)
 			),
-		'password' => array(
+		'raw_password' => array(
 			'NotNull' => array(
 				'rule' => 'notEmpty',
 				'message' => 'Ce champ ne peut etre vide'
@@ -133,8 +133,17 @@ class User extends AppModel {
 		return false;
 	}
 
+	public function beforeValidate($options = array()) {
+		if (!(isset($data['User']['ctrl_password']) && $data['User']['ctrl_password'] != '')) {
+			$data['User']['raw_password'] = 'aaaa11';
+			$data['User']['inherit'] = true;
+		}
+	}
+
 	public function beforeSave($options = array()) {
-		$this->data['User']['password'] = AuthComponent::password($this->data['User']['password']);
+		if (!$data['User']['inherit'] == true) {
+			$this->data['User']['password'] = AuthComponent::password($this->data['User']['password']);
+		}
 	}
 
 }

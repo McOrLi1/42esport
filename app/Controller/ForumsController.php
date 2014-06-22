@@ -2,7 +2,7 @@
 class ForumsController extends AppController {
 
 	public $uses = array('Forum', 'Category', 'Thread', 'Post', 'User');
-
+   
 	public function forums_list() {
 		$forums = $this->Forum->find('all', array('order' => 'created ASC'));
 		foreach ($forums as $k => $d) {
@@ -54,30 +54,6 @@ class ForumsController extends AppController {
 		$this->set('sidebar', $sidebar);
 	}
 
-	public function thread_add($id_category = null) {
-		if ($id_category == null) {
-			throw new NotFoundException("La page demandée n'existe pas");
-		}
-		$this->Thread->create();
-		if($this->request->is('post')) {
-			if ($this->Thread->save($this->request->data)) {
-				$this->Session->setFlash("Le sujet a bien ete ajouté", 'notif');
-				$this->redirect(array('action' => 'threads_list', $id_category));
-			} else {
-				$this->set('notif_clr', 'Red');
-				$this->Session->setFlash("Le sujet n'a pu etre ajouté", 'notif');
-			};
-		}
-		$this->set('category', ($category_data = $this->_category_data($id_category)));
-		$this->set('forum', $this->_forum_data($category_data['id_forum']));
-		$parent = $this->_category_parent_data($id_category);
-		$sidebar['head'] = array('forum' => $parent);
-		$sidebar['level'] = 'threads';
-		$sidebar['choices'] = $this->Category->find('all', array('conditions' => array('id_forum' => $parent['id']), 'fields' => array('id', 'name')));
-		$sidebar['current'] = $id_category;
-		$this->set('sidebar', $sidebar);
-	}
-
 	public function posts_list($id_thread = null) {
 		if ($id_thread == null) {
 			throw new NotFoundException("La page demandée n'existe pas");
@@ -108,6 +84,29 @@ class ForumsController extends AppController {
 		$this->set('sidebar', $sidebar);
 	}
 
+	public function thread_add($id_category = null) {
+		if ($id_category == null) {
+			throw new NotFoundException("La page demandée n'existe pas");
+		}
+		$this->Thread->create();
+		if($this->request->is('post')) {
+			if ($this->Thread->save($this->request->data)) {
+				$this->Session->setFlash("Le sujet a bien ete ajouté", 'notif');
+				$this->redirect(array('action' => 'threads_list', $id_category));
+			} else {
+				$this->Session->setFlash("Le sujet n'a pu etre ajouté", 'notif', array('color' => 'red'));
+			};
+		}
+		$this->set('category', ($category_data = $this->_category_data($id_category)));
+		$this->set('forum', $this->_forum_data($category_data['id_forum']));
+		$parent = $this->_category_parent_data($id_category);
+		$sidebar['head'] = array('forum' => $parent);
+		$sidebar['level'] = 'threads';
+		$sidebar['choices'] = $this->Category->find('all', array('conditions' => array('id_forum' => $parent['id']), 'fields' => array('id', 'name')));
+		$sidebar['current'] = $id_category;
+		$this->set('sidebar', $sidebar);
+	}
+
 	public function post_edit($id = null) {
 		if ($id == null) {
 			throw new NotFoundException("La page demandée n'existe pas");
@@ -121,8 +120,7 @@ class ForumsController extends AppController {
 			if ($this->Post->save($this->request->data)) {
 				$this->redirect(array('action' => 'posts_list', $found['Post']['id_thread']));
 			} else {
-				$this->set('notif_clr', 'Red');
-				$this->Session->setFlash("Votre post n'a pu etre modifié", 'notif');
+				$this->Session->setFlash("Votre post n'a pu etre modifié", 'notif', array('color' => 'red'));
 			}
 		}
 		$this->set('post', $found);
@@ -157,6 +155,37 @@ class ForumsController extends AppController {
 		$this->set('forums', $found);
 	}
 
+	public function admin_categories_list($id_forum = null) {
+		$found = $this->Category->find('all', array('conditions' => array('id_forum' => $id_forum)));
+		foreach ($found as $k => $d) {
+			$d = current($d);
+			$threads = $this->Thread->find('all', array('conditions' => array('id_category' => $d['id'])));
+			$found[$k]['Category']['nb_threads'] = count($threads);
+		}
+		$this->set('categories', $found);
+		$this->set('forum', $this->_forum_data($id_forum));
+	}
+
+	public function admin_threads_list($id_category = null) {
+		$found = $this->Thread->find('all', array('conditions' => array('id_category' => $id_category)));
+		foreach ($found as $k => $d) {
+			$d = current($d);
+			$posts = $this->Post->find('all', array('conditions' => array('id_thread' => $d['id'])));
+			$found[$k]['Thread']['nb_posts'] = count($posts);
+		}
+		$this->set('threads', $found);
+		$this->set('category', ($category_data = $this->_category_data($id_category)));
+		$this->set('forum', $this->_forum_data($category_data['id_forum']));
+	}
+
+	public function admin_posts_list($id_thread = null) {
+		$found = $this->Post->find('all', array('conditions' => array('id_thread' => $id_thread)));
+		$this->set('posts', $found);
+		$this->set('thread', ($thread_data = $this->_thread_data($id_thread)));
+		$this->set('category', ($category_data = $this->_category_data($thread_data['id_category'])));
+		$this->set('forum', $this->_forum_data($category_data['id_forum']));
+	}
+
 	public function admin_forums_add() {
 		if ($this->request->is('post')) {
 			$this->Forum->create();
@@ -164,10 +193,36 @@ class ForumsController extends AppController {
 				$this->Session->setFlash("Le forum a ete ajouté", 'notif');
 				$this->redirect(array('action' => 'forums_list'));
 			} else {
-				$this->set('notif_clr', 'Red');
-				$this->Session->setFlash("Le forum n'a pu etre ajouté", 'notif');
+				$this->Session->setFlash("Le forum n'a pu etre ajouté", 'notif', array('color' => 'red'));
 			};
 		}
+	}
+
+	public function admin_categories_add($id_forum) {
+		if ($this->request->is('post')) {
+			$this->Category->create();
+			if ($this->Category->save($this->data)) {
+				$this->Session->setFlash("La categorie a ete ajoutée", 'notif');
+				$this->redirect(array('action' => 'categories_list', $id_forum));
+			} else {
+				$this->Session->setFlash("La categorie n'a pu etre ajoutée", 'notif', array('color' => 'red'));
+			};
+		}
+		$this->set('forum', $this->_forum_data($id_forum));
+	}
+
+	public function admin_threads_add($id_category) {
+		if ($this->request->is('post')) {
+			$this->Thread->create();
+			if ($this->Thread->save($this->data)) {
+				$this->Session->setFlash("Le sujet a ete ajoutée", 'notif');
+				$this->redirect(array('action' => 'threads_list', $id_category));
+			} else {
+				$this->Session->setFlash("Le sujet n'a pu etre ajoutée", 'notif', array('color' => 'red'));
+			};
+		}
+		$this->set('category', ($category_data = $this->_category_data($id_category)));
+		$this->set('forum', $this->_forum_data($category_data['id_forum']));
 	}
 
 	public function admin_forums_edit($id = null) {
@@ -184,55 +239,11 @@ class ForumsController extends AppController {
 				$this->Session->setFlash("Le forum a été modifié", 'notif');
 				$this->redirect(array('action' => 'forums_list'));
 			} else {
-				$this->set('notif_clr', 'Red');
-				$this->Session->setFlash("Le forum n'a pu etre modifié", 'notif');
+				$this->Session->setFlash("Le forum n'a pu etre modifié", 'notif', array('color' => 'red'));
 			}
 		}
 		$this->request->data['Forum'] = current($found);
 		$this->set('forum', current($found));
-	}
-
-	public function admin_forums_delete($id = null) {
-		if ($id == null) {
-			throw new NotFoundException("La page demandée n'existe pas");
-		}
-		$found = $this->Forum->findById($id);
-		if ($found == null) {
-			throw new NotFoundException("La page demandée n'existe pas");
-		}
-		if ($this->Forum->delete($id)) {
-			$this->Session->setFlash("Le forum a bien été supprimé", 'notif');
-			$this->redirect(array('action' => 'forums_list'));
-		} else {
-			$this->set('notif_clr', 'Red');
-			$this->Session->setFlash("Le forum n'a pu etre supprimé", 'notif');
-			$this->redirect(array('action' => 'forums_list'));
-		}
-	}
-
-	public function admin_categories_list($id_forum = null) {
-		$found = $this->Category->find('all', array('conditions' => array('id_forum' => $id_forum)));
-		foreach ($found as $k => $d) {
-			$d = current($d);
-			$threads = $this->Thread->find('all', array('conditions' => array('id_category' => $d['id'])));
-			$found[$k]['Category']['nb_threads'] = count($threads);
-		}
-		$this->set('categories', $found);
-		$this->set('forum', $this->_forum_data($id_forum));
-	}
-
-	public function admin_categories_add($id_forum) {
-		if ($this->request->is('post')) {
-			$this->Category->create();
-			if ($this->Category->save($this->data)) {
-				$this->Session->setFlash("La categorie a ete ajoutée", 'notif');
-				$this->redirect(array('action' => 'categories_list', $id_forum));
-			} else {
-				$this->set('notif_clr', 'Red');
-				$this->Session->setFlash("La categorie n'a pu etre ajoutée", 'notif');
-			};
-		}
-		$this->set('forum', $this->_forum_data($id_forum));
 	}
 
 	public function admin_categories_edit($id = null) {
@@ -249,58 +260,12 @@ class ForumsController extends AppController {
 				$this->Session->setFlash("La categorie a été modifié", 'notif');
 				$this->redirect(array('action' => 'categories_list', $found['Category']['id_forum']));
 			} else {
-				$this->set('notif_clr', 'Red');
-				$this->Session->setFlash("La categorie n'a pu etre modifié", 'notif');
+				$this->Session->setFlash("La categorie n'a pu etre modifié", 'notif', array('color' => 'red'));
 			}
 		}
 		$this->request->data['Category'] = current($found);
 		$this->set('category', current($found));
 		$this->set('forum', $this->_forum_data($found['Category']['id_forum']));
-	}
-
-	public function admin_categories_delete($id = null, $id_forum) {
-		if ($id == null) {
-			throw new NotFoundException("La page demandée n'existe pas");
-		}
-		$found = $this->Category->findById($id);
-		if ($found == null) {
-			throw new NotFoundException("La page demandée n'existe pas");
-		}
-		if ($this->Category->delete($id)) {
-			$this->Session->setFlash("La categorie a bien été supprimée", 'notif');
-			$this->redirect(array('action' => 'categories_list', $id_forum));
-		} else {
-			$this->set('notif_clr', 'Red');
-			$this->Session->setFlash("La categorie n'a pu etre supprimé", 'notif');
-			$this->redirect(array('action' => 'categories_list', $id_forum));
-		}
-	}
-
-	public function admin_threads_list($id_category = null) {
-		$found = $this->Thread->find('all', array('conditions' => array('id_category' => $id_category)));
-		foreach ($found as $k => $d) {
-			$d = current($d);
-			$posts = $this->Post->find('all', array('conditions' => array('id_thread' => $d['id'])));
-			$found[$k]['Thread']['nb_posts'] = count($posts);
-		}
-		$this->set('threads', $found);
-		$this->set('category', ($category_data = $this->_category_data($id_category)));
-		$this->set('forum', $this->_forum_data($category_data['id_forum']));
-	}
-
-	public function admin_threads_add($id_category) {
-		if ($this->request->is('post')) {
-			$this->Thread->create();
-			if ($this->Thread->save($this->data)) {
-				$this->Session->setFlash("Le sujet a ete ajoutée", 'notif');
-				$this->redirect(array('action' => 'threads_list', $id_category));
-			} else {
-				$this->set('notif_clr', 'Red');
-				$this->Session->setFlash("Le sujet n'a pu etre ajoutée", 'notif');
-			};
-		}
-		$this->set('category', ($category_data = $this->_category_data($id_category)));
-		$this->set('forum', $this->_forum_data($category_data['id_forum']));
 	}
 
 	public function admin_threads_edit($id = null) {
@@ -317,39 +282,12 @@ class ForumsController extends AppController {
 				$this->Session->setFlash("Le sujet a été modifié", 'notif');
 				$this->redirect(array('action' => 'threads_list', $found['Thread']['id_category']));
 			} else {
-				$this->set('notif_clr', 'Red');
-				$this->Session->setFlash("Le sujet n'a pu etre modifié", 'notif');
+				$this->Session->setFlash("Le sujet n'a pu etre modifié", 'notif', array('color' => 'red'));
 			}
 		}
 		$this->request->data['Thread'] = current($found);
 		$this->set('thread', current($found));
 		$this->set('category', ($category_data = $this->_category_data($found['Thread']['id_category'])));
-		$this->set('forum', $this->_forum_data($category_data['id_forum']));
-	}
-
-	public function admin_threads_delete($id = null, $id_category) {
-		if ($id == null) {
-			throw new NotFoundException("La page demandée n'existe pas");
-		}
-		$found = $this->Thread->findById($id);
-		if ($found == null) {
-			throw new NotFoundException("La page demandée n'existe pas");
-		}
-		if ($this->Thread->delete($id)) {
-			$this->Session->setFlash("Le sujet a bien été supprimée", 'notif');
-			$this->redirect(array('action' => 'threads_list', $id_category));
-		} else {
-			$this->set('notif_clr', 'Red');
-			$this->Session->setFlash("Le sujet n'a pu etre supprimé", 'notif');
-			$this->redirect(array('action' => 'threads_list', $id_category));
-		}
-	}
-
-	public function admin_posts_list($id_thread = null) {
-		$found = $this->Post->find('all', array('conditions' => array('id_thread' => $id_thread)));
-		$this->set('posts', $found);
-		$this->set('thread', ($thread_data = $this->_thread_data($id_thread)));
-		$this->set('category', ($category_data = $this->_category_data($thread_data['id_category'])));
 		$this->set('forum', $this->_forum_data($category_data['id_forum']));
 	}
 
@@ -367,8 +305,7 @@ class ForumsController extends AppController {
 				$this->Session->setFlash("Le sujet a été modifié", 'notif');
 				$this->redirect(array('action' => 'posts_list', $found['Post']['id_thread']));
 			} else {
-				$this->set('notif_clr', 'Red');
-				$this->Session->setFlash("Le sujet n'a pu etre modifié", 'notif');
+				$this->Session->setFlash("Le sujet n'a pu etre modifié", 'notif', array('color' => 'red'));
 			}
 		}
 		$this->request->data['Post'] = current($found);
@@ -376,6 +313,57 @@ class ForumsController extends AppController {
 		$this->set('thread', ($thread_data = $this->_thread_data($found['Post']['id_thread'])));
 		$this->set('category', ($category_data = $this->_category_data($thread_data['id_category'])));
 		$this->set('forum', $this->_forum_data($category_data['id_forum']));
+	}
+
+	public function admin_forums_delete($id = null) {
+		if ($id == null) {
+			throw new NotFoundException("La page demandée n'existe pas");
+		}
+		$found = $this->Forum->findById($id);
+		if ($found == null) {
+			throw new NotFoundException("La page demandée n'existe pas");
+		}
+		if ($this->Forum->delete($id)) {
+			$this->Session->setFlash("Le forum a bien été supprimé", 'notif');
+			$this->redirect(array('action' => 'forums_list'));
+		} else {
+			$this->Session->setFlash("Le forum n'a pu etre supprimé", 'notif', array('color' => 'red'));
+			$this->redirect(array('action' => 'forums_list'));
+		}
+	}
+
+	public function admin_categories_delete($id = null, $id_forum) {
+		if ($id == null) {
+			throw new NotFoundException("La page demandée n'existe pas");
+		}
+		$found = $this->Category->findById($id);
+		if ($found == null) {
+			throw new NotFoundException("La page demandée n'existe pas");
+		}
+		if ($this->Category->delete($id)) {
+			$this->Session->setFlash("La categorie a bien été supprimée", 'notif');
+			$this->redirect(array('action' => 'categories_list', $id_forum));
+		} else {
+			$this->Session->setFlash("La categorie n'a pu etre supprimé", 'notif', array('color' => 'red'));
+			$this->redirect(array('action' => 'categories_list', $id_forum));
+		}
+	}
+
+	public function admin_threads_delete($id = null, $id_category) {
+		if ($id == null) {
+			throw new NotFoundException("La page demandée n'existe pas");
+		}
+		$found = $this->Thread->findById($id);
+		if ($found == null) {
+			throw new NotFoundException("La page demandée n'existe pas");
+		}
+		if ($this->Thread->delete($id)) {
+			$this->Session->setFlash("Le sujet a bien été supprimée", 'notif');
+			$this->redirect(array('action' => 'threads_list', $id_category));
+		} else {
+			$this->Session->setFlash("Le sujet n'a pu etre supprimé", 'notif', array('color' => 'red'));
+			$this->redirect(array('action' => 'threads_list', $id_category));
+		}
 	}
 
 	public function admin_posts_delete($id = null, $id_thread) {
@@ -390,8 +378,7 @@ class ForumsController extends AppController {
 			$this->Session->setFlash("Le sujet a bien été supprimée", 'notif');
 			$this->redirect(array('action' => 'posts_list', $id_thread));
 		} else {
-			$this->set('notif_clr', 'Red');
-			$this->Session->setFlash("Le sujet n'a pu etre supprimé", 'notif');
+			$this->Session->setFlash("Le sujet n'a pu etre supprimé", 'notif', array('color' => 'red'));
 			$this->redirect(array('action' => 'posts_list', $id_thread));
 		}
 	}
@@ -431,6 +418,7 @@ class ForumsController extends AppController {
 
 	public function beforeRender() {
 		parent::beforeRender();
+		$this->set('sidebar_admin', 'forums');
 		if ($this->request->prefix == null) {
 			$this->layout = 'forum';
 		}

@@ -37,7 +37,6 @@ class AppController extends Controller {
 
 	public function beforeFilter () {
 		$this->Auth->allow();
-
 		date_default_timezone_set('Europe/Paris');
 		if (isset($this->request->prefix) && $this->request->prefix === 'admin') {
 			$this->layout = 'admin';

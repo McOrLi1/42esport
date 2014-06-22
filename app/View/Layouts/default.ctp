@@ -48,14 +48,12 @@
 			</div>
 
 			<div class="col-md-6">
-				<div>
-					<?= $this->Session->flash(); ?>
-				</div>
+				<?= $this->Session->flash(); ?>
 				<?php if ($this->fetch('content')): ?>
-				<div class="bg">
-					<?= $this->fetch('content'); ?>
-				</div>
-			<?php endif ; ?>
+					<div class="bg">
+						<?= $this->fetch('content'); ?>
+					</div>
+				<?php endif ; ?>
 				<div class="jumbotron">
 					<h3>News</h3>
 				</div>

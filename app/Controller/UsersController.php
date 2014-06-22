@@ -8,8 +8,7 @@ class UsersController extends AppController {
 				$this->Session->setFlash("L'utilisateur a ete ajoute", 'notif');
 				$this->redirect(array('controller' => 'users', 'action' => 'list'));
 			} else {
-				$this->set('notif_clr', 'Red');
-				$this->Session->setFlash("L'utilisateur n'a pu etre ajoute", 'notif');
+				$this->Session->setFlash("L'utilisateur n'a pu etre ajoute", 'notif', array('color' => 'red'));
 			};
 		}
 	}
@@ -30,8 +29,7 @@ class UsersController extends AppController {
 /*				$this->redirect(array('controller' => 'users', 'action' => 'list'));
 */			}
 			else {
-				$this->set('notif_clr', 'Red');
-				$this->Session->setFlash("L'utilisateur n'a pu etre modifié", 'notif');
+				$this->Session->setFlash("L'utilisateur n'a pu etre modifié", 'notif', array('color' => 'red'));
 			}
 		}
 		$this->request->data['User']= current($found);
@@ -54,13 +52,10 @@ class UsersController extends AppController {
 			$this->Session->setFlash("L'utilisateur a été supprimé", 'notif');
 			$this->redirect(array('controller' => 'users', 'action' => 'list'));
 		} else {
-			$this->set('notif_clr', 'Red');
-			$this->Session->setFlash("L'utilisateur n'a pu etre supprimé", 'notif');
+			$this->Session->setFlash("L'utilisateur n'a pu etre supprimé", 'notif', array('color' => 'red'));
 			$this->redirect(array('controller' => 'users', 'action' => 'list'));
 		}
-
 	}
-
 	
 	public function login() {
 
@@ -68,15 +63,17 @@ class UsersController extends AppController {
 		{
 			if ($this->Auth->login()) {
 				$this->Session->setFlash("Vous etes loggé putain !!", 'notif');
+				$this->redirect(array('controller' => 'pages', 'action' => 'index'));
+			} else {
+				$this->Session->setFlash("Trop pas", 'notif', array('color' => 'orange'));
 			}
 		}
 	}
 
 	public function logout() {
 		$this->Auth->logout();
-		$this->set('notif_clr', 'Red');
-		$this->Session->setFlash("Au revoir", 'notif');
-		$this->redirect('/');
+		$this->Session->setFlash("Au revoir", 'notif', array('color' => 'red'));
+		$this->redirect(array('controller' => 'pages', 'action' => 'index'));
 	}
 
 	public function profile() {
@@ -87,6 +84,6 @@ class UsersController extends AppController {
 
 	public function beforeRender() {
 		parent::beforeRender();
-		$this->set('sidebar', 'users');
-	}	
+		$this->set('sidebar_admin', 'users');
+	}
 }

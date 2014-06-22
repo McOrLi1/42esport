@@ -133,12 +133,12 @@ div.my-nav-g {
 	background-color: #eee;
 }
 
-.bg-green {
+.bg-lblue {
 	padding: 10px;
 	margin-bottom: 10px;
 	border-radius: 6px;
 	color: white;
-	background-color: #66A566;
+	background-color: #0099cc;
 }
 
 .bg-blue {
@@ -149,12 +149,21 @@ div.my-nav-g {
 	background-color: #6699FF;
 }
 
+
 .bg-purple {
 	padding: 10px;
 	margin-bottom: 10px;
 	border-radius: 6px;
 	color: white;
 	background-color: #925EC7;
+}
+
+.bg-green {
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 6px;
+	color: white;
+	background-color: #66A566;
 }
 
 .twitch {

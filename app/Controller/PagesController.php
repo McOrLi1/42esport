@@ -4,7 +4,6 @@ App::uses('AppController', 'Controller');
 
 class PagesController extends AppController {
 
-
 	public $uses = array('User');
 
 	public function display() {
@@ -43,5 +42,4 @@ class PagesController extends AppController {
 	public function admin_index() {
 	}
 
-	
 }

@@ -24,8 +24,7 @@ class TournamentsController extends AppController {
 				$this->Session->setFlash("Le tournois a ete ajoute", 'notif');
 				$this->redirect(array('controller' => 'tournaments', 'action' => 'add'));
 			} else {
-				$this->set('notif_clr', 'Red');
-				$this->Session->setFlash("Le tournois n'a pu etre ajoute", 'notif');
+				$this->Session->setFlash("Le tournois n'a pu etre ajoute", 'notif', array('color' => 'red'));
 			};
 		}
 	}
@@ -46,8 +45,7 @@ class TournamentsController extends AppController {
 				$this->redirect(array('controller' => 'tournaments', 'action' => 'list'));
 			}
 			else {
-				$this->set('notif_clr', 'Red');
-				$this->Session->setFlash("Le tournois n'a pas pu etre modifié", 'notif');
+				$this->Session->setFlash("Le tournois n'a pas pu etre modifié", 'notif', array('color' => 'red'));
 			}
 		}
 		$this->request->data['Tournament']= current($found);
@@ -56,7 +54,7 @@ class TournamentsController extends AppController {
 
 	public function beforeRender() {
 		parent::beforeRender();
-		$this->set('sidebar', 'tournaments');
+		$this->set('sidebar_admin', 'tournaments');
 		if ($this->request->prefix == null) {
 			$this->layout = 'tournament';
 		}
@@ -74,11 +72,15 @@ class TournamentsController extends AppController {
 			$this->Session->setFlash("Le tournoi a été supprimé", 'notif');
 			$this->redirect(array('controller' => 'tournaments', 'action' => 'list'));
 		} else {
-			$this->set('notif_clr', 'Red');
-			$this->Session->setFlash("Le tournoi n'a pas pu etre supprimé", 'notif');
+			$this->Session->setFlash("Le tournoi n'a pas pu etre supprimé", 'notif', array('color' => 'red'));
 			$this->redirect(array('controller' => 'tournaments', 'action' => 'list'));
 		}
+	}
 
+	public function get_background($id) {
+		return (current(current($this->Tournament->find('all', array(
+			'conditions' => array('id' => $id),
+			'fields' => array('bg-url'))))));
 	}
 
 }

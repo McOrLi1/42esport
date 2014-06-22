@@ -6,7 +6,7 @@
 </div>
 <?php $this->Form->inputDefaults(array('div' => array('class' => 'form-group'), 'class' => 'form-control')) ?>
 <?= $this->Form->input('username', array('label' => 'Login')); ?>
-<?= $this->Form->input('password', array('label' => 'Mot de passe')); ?>
+<?= $this->Form->input('raw_password', array('label' => 'Mot de passe')); ?>
 <?= $this->Form->input('name', array('label' => 'Prénom')); ?>
 <?= $this->Form->input('lastname', array('label' => 'Nom')); ?>
 <?= $this->Form->input('email'); ?>

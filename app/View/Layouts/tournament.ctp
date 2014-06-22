@@ -27,7 +27,7 @@
 			</div>
 
 			<!--navbar-->
-			<div class="col-md-offset-3 col-md-6 nav-bg my-nav-g">
+			<div class="col-md-offset-6 nav-bg my-nav-g">
 				<?= $this->element('homebar'); ?>
 			</div>
 			
